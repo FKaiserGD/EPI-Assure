@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.ola-usuario {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    background-color: #cfc7c7;
+    margin-bottom: 2%;
+    height: 5vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header {
+    margin-bottom: 15%;
+}
+
+footer {
+    margin-top: 10%;
+    border: 1px solid #b8b3b3;
+    height: 30px;
+    padding: 5px;
+    background-color: #585656;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer img {
+    width: 25px;
+    height: 25px;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+}
