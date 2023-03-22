@@ -3,6 +3,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 20%;
 }
 
 /* Funcionário */
@@ -104,6 +105,7 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: row;
   text-decoration: underline;
+  margin-bottom: 20%;
 }
 
 .termo-container > input[type="checkbox"] {
