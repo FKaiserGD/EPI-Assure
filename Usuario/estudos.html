@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="stylesheet" href= "../Assets/css/estudos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+      function abreCapacete() {
+        window.open('https://epi-assure.netlify.app/usuario/estudos-det');
+      }
+    </script>
+
 </head>
 <body>
   <header>
@@ -33,7 +40,7 @@
 
     <h3>Check-Up:</h3>
     <div id="check-equip">
-      <div id="capacete">
+      <div id="capacete"  onclick="abreCapacete();">
         <img src="../Assets/Icones/seguranca (1).png" alt="" class="icone-equip">
         <div id="capacete-confirm">
           <h4>Capacete</h4>
@@ -41,7 +48,7 @@
         </div>
       </div>
       <hr>
-      <div id="luva">
+      <div id="luva" onclick="abreCapacete();">
         <img src="../Assets/Icones/seguranca.png" alt="" class="icone-equip">
         <div id="luva-confirm">
           <h4>Luvas</h4>
@@ -49,7 +56,7 @@
         </div>
       </div>
       <hr>
-      <div id="oculos">
+      <div id="oculos" onclick="abreCapacete();">
         <img src="../Assets/Icones/oculos-de-seguranca.png" alt="" class="icone-equip">
         <div id="oculos-confirm">
           <h4>Oculos de Proteção</h4>
@@ -57,7 +64,7 @@
         </div>
       </div>
       <hr>
-      <div id="botas">
+      <div id="botas" onclick="abreCapacete();">
         <img src="../Assets/Icones/seguranca (2).png" alt="" class="icone-equip">
         <div id="botas-confirm">
           <h4>Botas</h4>
@@ -72,7 +79,7 @@
   
   <footer>
     <ul>
-      <li><a href="" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
+      <li><a href="../Usuario/home.html" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
       <li><a href="../Usuario/estudos.html" class="icones"><i class="fa fa-book fa-2x" style="color: #5A98FF"></i></a></li>
       <li><a href="../Usuario/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
       <li><a href="../Usuario/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
