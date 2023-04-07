@@ -1,0 +1,91 @@
+main {
+    margin-top: 30%;
+}
+
+#conta {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    margin-left: 5%;
+}
+
+.fa {
+    width: 32px;
+    height: 32px;
+}
+
+#perfil {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+#perfil p {
+    font-size: 22px;
+    width: 100px;
+    margin-left: 5%;
+    padding-top: 1%;
+}
+
+#perfil #seta{
+    margin-left: 50%;
+}
+
+#senha {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+#senha p {
+    font-size: 22px;
+    width: 100px;
+    margin-left: 5%;
+    padding-top: 1%;
+}
+
+#senha #seta {
+    margin-left: 50%;
+}
+
+#notificacoes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+#notificacoes p {
+    font-size: 22px;
+    width: 100px;
+    margin-left: 5%;
+    padding-top: 1%;
+}
+
+#notificacoes #seta {
+    margin-left: 50%;
+}
+
+#mais {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    margin-left: 5%;
+    margin-top: 20%;
+}
+
+#ajuda {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+#ajuda p {
+    font-size: 22px;
+    width: 100px;
+    margin-left: 5%;
+    padding-top: 1%;
+}
+
+#ajuda #seta {
+    margin-left: 50%;
+}

@@ -1,0 +1,21 @@
+main {
+    margin-top: 25%;
+}
+
+main h3, p {
+    padding-top: 5%;
+    margin-left: 4%;
+}
+
+.desc-equip {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+#icone-equip {
+    display: block;
+    margin: auto;
+    width: 180px;
+    height: 180px;
+}
