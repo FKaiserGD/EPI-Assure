@@ -13,8 +13,8 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    height: 7vh;
-    margin-top: 5%;
+    padding-bottom: 2%;
+    height: 8vh;
     margin-left: 5%;
     margin-bottom: 15%;
 }
@@ -22,6 +22,10 @@ header {
 #imagem-user {
     width: 60px;
     height: 60px;
+}
+
+header h3{
+    width: 140px;
 }
 
 h3 {

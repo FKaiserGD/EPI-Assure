@@ -9,6 +9,24 @@ main h3 {
 #check-equip {
   margin-top: 8%;
   margin-left: 5%;
+  margin-bottom: 10%;
+}
+
+#check-equip .fa {
+  margin-left: 20%;
+  padding-top: 4%;
+}
+
+#check-equip #error{
+  color: red;
+}
+
+#check-equip #exclamation {
+  color: yellow;
+}
+
+#check-equip #check {
+  color: green;
 }
 
 #capacete {
