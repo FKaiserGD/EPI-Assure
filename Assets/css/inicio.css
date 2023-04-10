@@ -14,13 +14,14 @@ header {
 }
 
 img#logo1 {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    margin-left: 5%;
 }
 
 header h3 {
     padding-top: 6%;
-    padding-left: 2%;
+    padding-left: 3%;
 }
 
 main {
@@ -30,8 +31,8 @@ main {
 img#logo2 {
     display: block;
     margin: auto;
-    width: 290px;
-    height: 260px;
+    width: 200px;
+    height: 200px;
     margin-bottom: 5%;
 }
 
