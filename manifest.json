@@ -1,48 +1,90 @@
 {
-"name": "The name of your application",
-"short_name": "This name will show in your Windows taskbar, in the start menu, and Android homescreen",
-"start_url": "The URL that should be loaded when your application is opened",
-"display": "standalone",
-"description": "A description for your application",
-"lang": " The default language of your application",
-"dir": "auto",
-"theme_color": "#000000",
-"background_color": "#000000",
-"orientation": "any",
-"icons": [
-    {
-        "src": "https://www.pwabuilder.com/assets/icons/icon_512.png",
+    "name": "EPI ASSURE",
+    "short_name": "EPI ASSURE",
+    "start_url": "https://epi-assure.netlify.app",
+    "display": "standalone",
+    "description": "Web App desenvolvido com o objetivo de monitorar o uso de EPI e educar sobre seu uso",
+    "lang": "pt",
+    "dir": "auto",
+    "theme_color": "#000000",
+    "background_color": "#F5F5F5",
+    "orientation": "any",
+    "icons": [
+        {
+        "src": "./Assets/images/AppIcons/icon_512x512.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
-    },
-    {
-        "src": "https://www.pwabuilder.com/assets/icons/icon_192.png",
+        },
+        {
+        "src": "./Assets/images/AppIcons/icon_192x192.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "any"
-    }
-],
-"screenshots": [
+        },
+        {
+        "src": "./Assets/images/AppIcons/icon_144x144.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "purpose": "any"
+        },
+        {
+        "src": "./Assets/images/AppIcons/icon_96x96.png",
+        "sizes": "96x96",
+        "type": "image/png",
+        "purpose": "any"
+        },
+        {
+        "src": "./Assets/images/AppIcons/icon_72x72.png",
+        "sizes": "72x72",
+        "type": "image/png",
+        "purpose": "any"
+        },
+        {
+        "src": "./Assets/images/AppIcons/icon_48x48.png",
+        "sizes": "48x48",
+        "type": "image/png",
+        "purpose": "any"
+        },
     {
-        "src": "https://www.pwabuilder.com/assets/screenshots/screen1.png",
-        "sizes": "2880x1800",
+        "src": "./Assets/images/AppIcons/icon_16x16.png",
+        "sizes": "16x16",
+        "type": "image/png",
+        "purpose": "any"
+        }	  
+    ],
+    "screenshots": [
+        {
+        "src": "image.png/images/AppIcons/preview.png",
+        "sizes": "436x807",
         "type": "image/png",
         "description": "A screenshot of the home page"
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "shortcuts": [
+        {
+        "name": "The name you would like to be displayed for your shortcut",
+        "url": "The url you would like to open when the user chooses this shortcut. This must be a URL local to your PWA. For example: If my start_url is /, this URL must be something like /shortcut",
+        "description": "A description of the functionality of this shortcut"
+        }
+    ],
+    "iarc_rating_id": "e58c174a-81d2-5c3c-32cc-34b8de4a52e9",
+    "scope": "https://epi-assure.netlify.app",
+    "display_override": [
+        "standalone",
+        "fullscreen",
+        "window-controls-overlay",
+        "browser"
+    ],
+    "share_target": {
+        "action": "/share-target/",
+        "method": "GET",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"        
+        }
     }
-],
-"related_applications": [
-    {
-        "platform":"windows",
-        "url": " The URL to your app in that app store"
-    }
-],
-"prefer_related_applications": false,
-"shortcuts": [
-    {
-        "name":"The name you would like to be displayed for your shortcut",
-        "url":"The url you would like to open when the user chooses this shortcut. This must be a URL local to your PWA. For example: If my start_url is /, this URL must be something like /shortcut",
-        "description":"A description of the functionality of this shortcut"
-    }
-]
 }
