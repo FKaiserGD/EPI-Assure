@@ -78,12 +78,6 @@
         "productivity",
         "security"
     ],
-    "display_override": [
-        "standalone",
-        "fullscreen",
-        "window-controls-overlay",
-        "browser"
-    ],
     "share_target": {
         "action": "/share-target/",
         "method": "GET",
