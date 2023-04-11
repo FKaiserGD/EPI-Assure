@@ -97,6 +97,36 @@ hr {
   margin-top: 5%;
 }
 
+#mascara {
+  display: flex;
+  flex-direction: row;
+}
+
+#mascara-confirm {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#cone {
+  display: flex;
+  flex-direction: row;
+}
+
+#cone-confirm {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#fita {
+  display: flex;
+  flex-direction: row;
+}
+
+#fita-confirm {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
 /* Container */
 
 .container1 {
