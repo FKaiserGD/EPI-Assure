@@ -3,15 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Adicionar uma nova EPI aos sistemas dos funcionários da sua empresa">
-    <title>Nova EPI</title>
+    <link rel="manifest" href="../manifest.json" />  
     <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="stylesheet" href="../Assets/css/add-epi.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <title>Nova EPI</title>
 </head>
-
 <body>
     <header>
         <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="imagem do usuário" id="imagem-user">
@@ -19,7 +20,6 @@
         <i class="fa fa-plus fa-2x"></i>
         <i class="fa fa-bell-o fa-2x"></i>
     </header>
-
     <main>
         <h3>Adicionar Nova EPI</h3>
         <div class="imagem">
@@ -35,16 +35,42 @@
         </form>
 
     </main>
-
+    <footer>
+        <ul>
+            <li><a href="../Administrador/home.html" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
+            <li><i class="fa fa-address-book-o fa-2x" style="color: #5A98FF;"></i></li>
+            <li><a href="../Administrador/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
+            <li><a href="../Administrador/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
+        </ul>
+    </footer>
+    <script>navigator.serviceWorker.register("service-worker.js")</script> 
+    <script>
+        let newWorker;
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(reg => {
+                reg.addEventListener('updatefound', () => {
+                    // A wild service worker has appeared in reg.installing!
+                    newWorker = reg.installing;
+                    newWorker.addEventListener('statechange', () => {
+                        // Has network.state changed?
+                        switch (newWorker.state) {
+                            case 'installed':
+                            if (navigator.serviceWorker.controller) {
+                                // new update available
+                            }
+                            // No update available
+                            break;
+                        }
+                    });
+                });
+            });
+            let refreshing;
+            navigator.serviceWorker.addEventListener('controllerchange', function () {
+                if (refreshing) return;
+                window.location.reload();
+                refreshing = true;
+            });
+        }
+    </script>
 </body>
-
-<footer>
-    <ul>
-        <li><a href="../Administrador/home.html" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
-        <li><i class="fa fa-address-book-o fa-2x" style="color: #5A98FF;"></i></li>
-        <li><a href="../Administrador/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
-        <li><a href="../Administrador/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
-    </ul>
-</footer>
-
 </html>

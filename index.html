@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tela inicio do nosso site, dando as boas-vindas ao nosso usuário. Autores: Squad 1">
+    <link rel="manifest" href="manifest.json" />    
+    <link rel="stylesheet" href="./Assets/css/inicio.css">
+    <link rel="shortcut icon" href="./Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <title>EPI Assure</title>
-    <link rel="stylesheet" href="../Assets/css/inicio.css">
 </head>
-
 <body>
     <header>
-        <img src="../Assets/Logo/logo.png" alt="logo" id="logo1">
+        <img src="./Assets/images/Logo/logo.png" alt="logo" id="logo1">
         <h3>EPI ASSURE</h3>
     </header>
     <main>
-        <img src="../Assets/Logo/logo.png" alt="logo" id="logo2">
+        <img src="./Assets/images/Logo/logo.png" alt="logo" id="logo2">
         <div id="texto">
             <h2>Olá</h2>
             <p>Bem-vindo ao EPI Assure! <br>
@@ -24,9 +24,36 @@
         </div>
         <form action="login.html">
             <button type="submit">Entrar</button>
-        </form>
-    
+        </form>    
     </main>
+    <script>navigator.serviceWorker.register("service-worker.js")</script> 
+    <script>
+        let newWorker;
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(reg => {
+                reg.addEventListener('updatefound', () => {
+                    // A wild service worker has appeared in reg.installing!
+                    newWorker = reg.installing;
+                    newWorker.addEventListener('statechange', () => {
+                        // Has network.state changed?
+                        switch (newWorker.state) {
+                            case 'installed':
+                            if (navigator.serviceWorker.controller) {
+                                // new update available
+                            }
+                            // No update available
+                            break;
+                        }
+                    });
+                });
+            });
+            let refreshing;
+            navigator.serviceWorker.addEventListener('controllerchange', function () {
+                if (refreshing) return;
+                window.location.reload();
+                refreshing = true;
+            });
+        }
+    </script>
 </body>
-
 </html>

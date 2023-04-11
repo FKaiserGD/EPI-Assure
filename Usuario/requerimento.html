@@ -5,45 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página de requerimento para solicitar um novo equipamento e relatar o motivo de tal necessidade.">
+    <link rel="manifest" href="../manifest.json" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="requerimento.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <title>Pagina de Requerimento</title>
 </head>
 <body>
-    <header>
-      <div class="ola-usuario"><b>Olá, Usuário!</b></div>
-    </header>
+  <header>
+    <div class="ola-usuario"><b>Olá, Usuário!</b></div>
+  </header>
+  <main>
+    <h3 class="mensagem">Escolha um Item:</h3>
+      <select name="item" id="item">
+        <option value="1">Protetor Auricular</option>
+        <option value="2">Capacete de Segurança</option>
+        <option value="3">Luvas de Segurança</option>
+        <option value="4">Óculos de Segurança</option>
+      </select>
 
-     <main>
-        <h3 class="mensagem">Escolha um Item:</h3>
-          <select name="item" id="item">
-            <option value="1">Protetor Auricular</option>
-            <option value="2">Capacete de Segurança</option>
-            <option value="3">Luvas de Segurança</option>
-            <option value="4">Óculos de Segurança</option>
-          </select>
-
-        <h3 class="mensagem">Escolha uma Causa:</h3>
-          <select name="causa" id="causa">
-            <option value="1">Equipamento com Defeito</option>
-            <option value="2">Equipamento com Defeito</option>
-            <option value="3">Equipamento Errado</option>
-            <option value="4">Outros (Utilize a descrição)</option>
-          </select>
-
-        <textarea id="descricao" name="descricao" placeholder="Descrição da Observação..."></textarea>
-     </main>
+    <h3 class="mensagem">Escolha uma Causa:</h3>
+      <select name="causa" id="causa">
+        <option value="1">Equipamento com Defeito</option>
+        <option value="2">Equipamento com Defeito</option>
+        <option value="3">Equipamento Errado</option>
+        <option value="4">Outros (Utilize a descrição)</option>
+      </select>
+    <textarea id="descricao" name="descricao" placeholder="Descrição da Observação..."></textarea>
+  </main>
+  <footer>
+    <ul>
+      <li><a href="../Usuario/home.html" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
+      <li><a href="../Usuario/estudos.html" class="icones"><i class="fa fa-book fa-2x"></i></a></li>
+      <li><a href="../Usuario/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
+      <li><a href="../Usuario/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
+    </ul>
+  </footer>
+  <script>navigator.serviceWorker.register("service-worker.js")</script> 
+  <script>
+    let newWorker;
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(reg => {
+        reg.addEventListener('updatefound', () => {
+          // A wild service worker has appeared in reg.installing!
+          newWorker = reg.installing;
+          newWorker.addEventListener('statechange', () => {
+            // Has network.state changed?
+            switch (newWorker.state) {
+              case 'installed':
+              if (navigator.serviceWorker.controller) {
+                // new update available
+              }
+              // No update available
+              break;
+            }
+          });
+        });
+      });
+      let refreshing;
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (refreshing) return;
+        window.location.reload();
+        refreshing = true;
+      });
+    }
+  </script>
 </body>
-
-<footer>
-  <ul>
-    <li><a href="../Usuario/home.html" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
-    <li><a href="../Usuario/estudos.html" class="icones"><i class="fa fa-book fa-2x"></i></a></li>
-    <li><a href="../Usuario/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
-    <li><a href="../Usuario/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
-  </ul>
-</footer>
-
-
-
 </html>

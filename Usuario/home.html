@@ -5,137 +5,173 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Home do site. Na versão de usuário">
-    <title>Home</title>
+    <link rel="manifest" href="../manifest.json" />
     <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="stylesheet" href="../Assets/css/home.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <title>Home</title>
 </head>
 <body>
-    <header>
-      <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="imagem do usuário" id="imagem-user">
-      <h3>Nome do Usuário</h3>
-      <img src="../Assets/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer">
-      <i class="fa fa-bell-o fa-2x"></i>
-    </header>
-
-    <main>
-
-      <h3>Check-Up:</h3>
-      <div id="check-equip">
-        <div id="capacete">
-          <img src="../Assets/Icones/capacete.webp" alt="" class="icone-equip">
-          <div id="capacete-confirm">
-            <h4>Capacete</h4>
-            <form action="">
-              <input type="checkbox" name="capacete">
-              <label for="capacete">Sim</label>
-            </form>
-          </div>
-        </div>
-        <hr>
-        <div id="luva">
-          <img src="../Assets/Icones/luvas.webp" alt="" class="icone-equip">
-          <div id="luva-confirm">
-            <h4>Luvas</h4>
-            <form action="">
-              <input type="checkbox" name="luva">
-              <label for="luva">Sim</label>
-            </form>
-          </div>
-        </div>
-        <hr>
-        <div id="oculos">
-          <img src="../Assets/Icones/oculos-de-seguranca.webp" alt="" class="icone-equip">
-          <div id="oculos-confirm">
-            <h4>Oculos de Proteção</h4>
-            <form action="">
-              <input type="checkbox" name="oculos">
-              <label for="oculos">Sim</label>
-            </form>
-          </div>
-        </div>
-        <hr>
-        <div id="botas">
-          <img src="../Assets/Icones/botas.webp" alt="" class="icone-equip">
-          <div id="botas-confirm">
-            <h4>Botas</h4>
-            <form action="">
-              <input type="checkbox" name="botas">
-              <label for="botas">Sim</label>
-            </form>
-          </div>
-        </div>
-        <hr>
-        <div id="colete">
-          <img src="../Assets/Icones/colete.webp" alt="" class="icone-equip">
-          <div id="colete-confirm">
-            <h4>Colete</h4>
-            <form action="">
-              <input type="checkbox" name="colete">
-              <label for="colete">Sim</label>
-            </form>
-          </div>
-        </div>
-        <hr>
-        <div id="fita">
-          <img src="../Assets/Icones/fita.webp" alt="" class="icone-equip">
-          <div id="fita-confirm">
-            <h4>Fita</h4>
-            <form action="">
-              <input type="checkbox" name="fita">
-              <label for="fita">Sim</label>
-            </form>
-          </div>
-        </div>
-        <hr>
-        <div id="mascara">
-          <img src="../Assets/Icones/mascara-medica.webp" alt="" class="icone-equip">
-          <div id="mascara-confirm">
-            <h4>Máscara</h4>
-            <form action="">
-              <input type="checkbox" name="mascara">
-              <label for="mascara">Sim</label>
-            </form>
-          </div>
-        </div>
-        <hr>
-        <div id="cone">
-          <img src="../Assets/Icones/cone.webp" alt="" class="icone-equip">
-          <div id="cone-confirm">
-            <h4>Cone</h4>
-            <form action="">
-              <input type="checkbox" name="cone">
-              <label for="cone">Sim</label>
-            </form>
-          </div>
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="imagem do usuário" id="imagem-user">
+    <h3>Nome do Usuário</h3>
+    <img src="../Assets/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer">
+    <i class="fa fa-bell-o fa-2x"></i>
+  </header>
+  <main>
+    <h3>Check-Up:</h3>
+    <div id="check-equip">
+      <div id="capacete">
+        <img src="../Assets/Icones/capacete.webp" alt="" class="icone-equip">
+        <div id="capacete-confirm">
+          <h4>Capacete</h4>
+          <form action="">
+            <input type="checkbox" name="capacete">
+            <label for="capacete">Sim</label>
+          </form>
         </div>
       </div>
-      
-
-      <div class="container1">
-        <button class="botao-solicitacao"><i class="fa fa-plus fa-1x"></i> Adicionar foto comprobatória</button>
+      <hr>
+      <div id="luva">
+        <img src="../Assets/Icones/luvas.webp" alt="" class="icone-equip">
+        <div id="luva-confirm">
+          <h4>Luvas</h4>
+          <form action="">
+            <input type="checkbox" name="luva">
+            <label for="luva">Sim</label>
+          </form>
+        </div>
       </div>
-      
-      <div class="termo-container">
-        <input type="checkbox" id="termo" name="termo">
-        <label for="termo">Termo de veracidade das informações prestadas</label>
+      <hr>
+      <div id="oculos">
+        <img src="../Assets/Icones/oculos-de-seguranca.webp" alt="" class="icone-equip">
+        <div id="oculos-confirm">
+          <h4>Oculos de Proteção</h4>
+          <form action="">
+            <input type="checkbox" name="oculos">
+            <label for="oculos">Sim</label>
+          </form>
+        </div>
       </div>
-
-      <div class="container2">
-        <button class="botao-confirma"><b>Confirmar</b></button>
+      <hr>
+      <div id="botas">
+        <img src="../Assets/Icones/botas.webp" alt="" class="icone-equip">
+        <div id="botas-confirm">
+          <h4>Botas</h4>
+          <form action="">
+            <input type="checkbox" name="botas">
+            <label for="botas">Sim</label>
+          </form>
+        </div>
       </div>
-
-    </main>
-      
+      <hr>
+      <div id="colete">
+        <img src="../Assets/Icones/colete.webp" alt="" class="icone-equip">
+        <div id="colete-confirm">
+          <h4>Colete</h4>
+          <form action="">
+            <input type="checkbox" name="colete">
+            <label for="colete">Sim</label>
+          </form>
+        </div>
+      </div>
+      <hr>
+      <div id="fita">
+        <img src="../Assets/Icones/fita.webp" alt="" class="icone-equip">
+        <div id="fita-confirm">
+          <h4>Fita</h4>
+          <form action="">
+            <input type="checkbox" name="fita">
+            <label for="fita">Sim</label>
+          </form>
+        </div>
+      </div>
+      <hr>
+      <div id="mascara">
+        <img src="../Assets/Icones/mascara-medica.webp" alt="" class="icone-equip">
+        <div id="mascara-confirm">
+          <h4>Máscara</h4>
+          <form action="">
+            <input type="checkbox" name="mascara">
+            <label for="mascara">Sim</label>
+          </form>
+        </div>
+      </div>
+      <hr>
+      <div id="cone">
+        <img src="../Assets/Icones/cone.webp" alt="" class="icone-equip">
+        <div id="cone-confirm">
+          <h4>Cone</h4>
+          <form action="">
+            <input type="checkbox" name="cone">
+            <label for="cone">Sim</label>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container1">
+      <button id="open-camera-btn" class="botao-solicitacao"><i class="fa fa-plus fa-1x"></i> Adicionar foto comprobatória</button>
+      <video id="camera-stream" autoplay></video>
+      <script>
+          const openCameraBtn = document.getElementById('open-camera-btn');
+        const cameraStream = document.getElementById('camera-stream');
+    
+        openCameraBtn.addEventListener('click', function() {
+          navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+              cameraStream.srcObject = stream;
+            })
+            .catch(function(error) {
+              console.error('Ocorreu um erro ao acessar a câmera:', error);
+            });
+        });
+      </script>
+    </div>     
+    <div class="termo-container">
+      <input type="checkbox" id="termo" name="termo">
+      <label for="termo">Termo de veracidade das informações prestadas</label>
+    </div>
+    <div class="container2">
+      <button class="botao-confirma"><b>Confirmar</b></button>
+    </div>
+  </main>
+  <footer>
+    <ul>
+      <li><i class="fa fa-home fa-2x" style="color: #5A98FF;"></i></li>
+      <li><a href="../Usuario/estudos.html" class="icones"><i class="fa fa-book fa-2x"></i></a></li>
+      <li><a href="../Usuario/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
+      <li><a href="../Usuario/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
+    </ul>
+  </footer>
+  <script>navigator.serviceWorker.register("service-worker.js")</script> 
+  <script>
+      let newWorker;
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js').then(reg => {
+          reg.addEventListener('updatefound', () => {
+            // A wild service worker has appeared in reg.installing!
+            newWorker = reg.installing;
+            newWorker.addEventListener('statechange', () => {
+              // Has network.state changed?
+              switch (newWorker.state) {
+                case 'installed':
+                if (navigator.serviceWorker.controller) {
+                  // new update available
+                }
+                // No update available
+                break;
+              }
+            });
+          });
+        });
+        let refreshing;
+        navigator.serviceWorker.addEventListener('controllerchange', function () {
+          if (refreshing) return;
+          window.location.reload();
+          refreshing = true;
+        });
+      }
+  </script>
 </body>
-
-<footer>
-  <ul>
-    <li><i class="fa fa-home fa-2x" style="color: #5A98FF;"></i></li>
-    <li><a href="../Usuario/estudos.html" class="icones"><i class="fa fa-book fa-2x"></i></a></li>
-    <li><a href="../Usuario/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
-    <li><a href="../Usuario/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
-  </ul>
-</footer>
-
 </html>

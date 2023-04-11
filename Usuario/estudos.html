@@ -5,17 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descubra mais sobre essas EPI's tão importantes no dia-a-dia. Só para usuários">
-    <title>Pagina de Estudos</title>
+    <link rel="manifest" href="../manifest.json" />  
     <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="stylesheet" href= "../Assets/css/estudos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script>
-      function abreCapacete() {
-        window.open('https://epi-assure.netlify.app/usuario/estudos-det', '_self');
-      }
-    </script>
-
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <title>Pagina de Estudos</title>
 </head>
 <body>
   <header>
@@ -24,9 +19,7 @@
     <img src="../Assets/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer">
     <i class="fa fa-bell-o fa-2x"></i>
   </header>
-  
   <main>
-
     <div class="container">
       <div class="tabs">
         <input type="radio" id="radio-1" name="tabs" checked />
@@ -38,7 +31,6 @@
         <span class="glider"></span>
       </div>
     </div>
-
     <div id="check-equip">
       <div id="capacete"  onclick="abreCapacete();">
         <img src="../Assets/Icones/capacete.webp" alt="" class="icone-equip">
@@ -103,12 +95,8 @@
           <p>Proteção para pés contra impactos, quedas, cortes e umidade.</p>
         </div>
       </div>
-    </div>
-  
-  </main>
-  
-  </body>
-  
+    </div>  
+  </main> 
   <footer>
     <ul>
       <li><a href="../Usuario/home.html" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
@@ -117,6 +105,39 @@
       <li><a href="../Usuario/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
     </ul>
   </footer>
-  
+  <script>
+    function abreCapacete() {
+      window.open('https://epi-assure.netlify.app/usuario/estudos-det', '_self');
+    }
+  </script>
+  <script>navigator.serviceWorker.register("service-worker.js")</script> 
+  <script>
+    let newWorker;
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(reg => {
+        reg.addEventListener('updatefound', () => {
+          // A wild service worker has appeared in reg.installing!
+          newWorker = reg.installing;
+          newWorker.addEventListener('statechange', () => {
+            // Has network.state changed?
+            switch (newWorker.state) {
+              case 'installed':
+              if (navigator.serviceWorker.controller) {
+                // new update available
+              }
+              // No update available
+              break;
+            }
+          });
+        });
+      });
+      let refreshing;
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (refreshing) return;
+        window.location.reload();
+        refreshing = true;
+      });
+    }
+  </script> 
 </body>
 </html>
