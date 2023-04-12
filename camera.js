@@ -12,7 +12,7 @@ function toggleCamera() {
   });
 
   // inicia um novo fluxo de vídeo com a nova opção "facingMode"
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: currentCamera } } })
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: currentCamera } })
     .then(function(stream) {
       cameraStream.srcObject = stream;
     })
@@ -25,15 +25,13 @@ function abreCamera() {
   const openCameraBtn = document.getElementById('open-camera-btn');
   const cameraStream = document.getElementById('camera-stream');
 
-  openCameraBtn.addEventListener('click', function() {
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
-      .then(function(stream) {
-        cameraStream.srcObject = stream;
-      })
-      .catch(function(error) {
-        console.error('Ocorreu um erro ao acessar a câmera:', error);
-      });
-  });
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: currentCamera } })
+    .then(function(stream) {
+      cameraStream.srcObject = stream;
+    })
+    .catch(function(error) {
+      console.error('Ocorreu um erro ao acessar a câmera:', error);
+    });
 }
 
 
@@ -48,6 +46,7 @@ function tiraFoto() {
 
   const dataUrl = canvas.toDataURL('image/png');
   picture.setAttribute('src', dataUrl);
+  picture.style.width = "100%";
 }
 
 // adiciona os listeners após o carregamento completo do documento
