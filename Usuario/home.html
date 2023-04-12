@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -118,7 +118,17 @@
     <div class="container1">
       <button id="open-camera-btn" class="botao-solicitacao" onclick="abreCamera()"><i class="fa fa-plus fa-1x"></i> Adicionar foto comprobatória</button>
       <video id="camera-stream" autoplay></video>
-    </div>     
+    </div>
+    <div id="botoes-cam">
+      <ul>
+        <li><button id="take-picture-btn" class="opcoes-cam" onclick="tiraFoto()"><i class="fa fa-camera fa-2x"></i></button></li>
+        <li><button id="toggle-camera-btn" class="opcoes-cam" onclick="toggleCamera()"><i class="fa fa-refresh fa-2x"></i></button></li>
+      </ul>
+      <div id="cam-foto">
+        <p>Sua foto:</p>
+        <img id="picture" src="">
+      </div>
+    </div>
     <div class="termo-container">
       <input type="checkbox" id="termo" name="termo">
       <label for="termo">Termo de veracidade das informações prestadas</label>
