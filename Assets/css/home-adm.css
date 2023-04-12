@@ -29,17 +29,17 @@ main h3 {
   color: green;
 }
   
-#capacete {
+.equipamento {
   display: flex;
   flex-direction: row;
 }
   
-#capacete-confirm {
+.confirm {
   margin-left: 5%;
   margin-top: 5%;
 }
   
-#check-equip > input[type="checkbox"] {
+.equipamento > input[type="checkbox"] {
   width: 40px;
   height: 40px;
   margin-top: 10%;
@@ -55,86 +55,6 @@ hr {
   width: 350px;
   margin-top: 3%;
   margin-bottom: 3%;
-}
-  
-#luva {
-  display: flex;
-  flex-direction: row;
-}
-  
-#luva-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-  
-#oculos{
-  display: flex;
-  flex-direction: row;
-}
-  
-#oculos-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-  
-#botas {
-  display: flex;
-  flex-direction: row;
-}
-  
-#botas-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-  
-#colete {
-  display: flex;
-  flex-direction: row;
-}
-  
-#colete-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#colete {
-  display: flex;
-  flex-direction: row;
-}
-
-#colete-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#mascara {
-  display: flex;
-  flex-direction: row;
-}
-
-#mascara-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#cone {
-  display: flex;
-  flex-direction: row;
-}
-
-#cone-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#fita {
-  display: flex;
-  flex-direction: row;
-}
-
-#fita-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
 }
   
 /* Container */
@@ -176,25 +96,20 @@ hr {
   flex-direction: column;
 }
 
-#termo1 {
+.ler-termo {
   display: flex;
   flex-direction: row;
   margin-bottom: 4%;
 }
-  
-#termo2 {
-  display: flex;
-  flex-direction: row;
-}
 
-.termo-container > input[type="checkbox"] {
+.ler-termo > input[type="checkbox"] {
   width: 25px;
   height: 25px;
 }
 
 label {
-  font-size: 14px;
-  margin-left: 5%;
+  font-size: 16px;
+  margin-left: 3%;
 }
   
 .container2 {
