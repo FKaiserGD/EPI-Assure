@@ -66,8 +66,9 @@ main h3 {
 }
 
 .icone-equip {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    padding-top: 5%;
 }
 
 hr {

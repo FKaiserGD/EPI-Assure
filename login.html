@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Login do site. Você pode entrar como usuário ou administrador dependendo de sua posição na empresa">
-    <link rel="manifest" href="manifest.json" />  
     <link rel="stylesheet" href="./Assets/css/login.css">
     <link rel="shortcut icon" href="./Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <title>Entrar</title>
 </head>
 <body>
     <header>
-        <img src="./Assets/images/Logo/logo.png" alt="logo" id="logo">
+        <img src="./Assets/images/Logo/logo.webp" alt="logo" id="logo">
     </header>
     <main>
         <div id="texto">
@@ -26,35 +25,6 @@
             <button><a href="https://epi-assure.netlify.app/administrador/home">Entrar como Administrador</a></button>
         </form>
     </main>
-    <a href="#"><b>Esqueceu a senha ou o código?</b></a>
-    <script>navigator.serviceWorker.register("service-worker.js")</script> 
-    <script>
-        let newWorker;
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').then(reg => {
-                reg.addEventListener('updatefound', () => {
-                    // A wild service worker has appeared in reg.installing!
-                    newWorker = reg.installing;
-                    newWorker.addEventListener('statechange', () => {
-                        // Has network.state changed?
-                        switch (newWorker.state) {
-                            case 'installed':
-                            if (navigator.serviceWorker.controller) {
-                                // new update available
-                            }
-                            // No update available
-                            break;
-                        }
-                    });
-                });
-            });
-            let refreshing;
-            navigator.serviceWorker.addEventListener('controllerchange', function () {
-                if (refreshing) return;
-                window.location.reload();
-                refreshing = true;
-            });
-        }
-    </script>
+    <a href="https://epi-assure.netlify.app/recuperar-senha"><b>Esqueceu a senha ou o código?</b></a>
 </body>
 </html>

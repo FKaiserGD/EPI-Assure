@@ -2,26 +2,21 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="Home do site. Na versão de administrador">  
-
     <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="stylesheet" href="../Assets/css/home-adm.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
-
-    <link rel="manifest" href="../manifest.json" />
-
     <title>Home</title>
+    <script src="../camera.js"></script>
 </head>
 <body>
     <header>
-        <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="imagem do usuário" id="imagem-user">
+        <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
         <h3>Nome do Administrador</h3>
-        <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer">
-        <i class="fa fa-bell-o fa-2x"></i>
+        <i class="fa fa-bell-o fa-2x" style="margin-left: 20%;"></i>
     </header>
     <main>
         <h3>Check-Up:</h3>
@@ -69,6 +64,7 @@
                     </form>
                 </div>
             </div>
+            <hr>
             <div class="equipamento">
                 <img src="../Assets/images/Icones/colete.webp" alt="" class="icone-equip">
                 <div class="confirm">
@@ -114,31 +110,17 @@
             </div>
         </div>
         <div class="container1">
-            <button id="open-camera-btn" class="botao-solicitacao"><i class="fa fa-plus fa-1x"></i> Adicionar foto comprobatória</button>
+            <button id="open-camera-btn" class="botao-solicitacao" onclick="abreCamera()"><i class="fa fa-plus fa-1x"></i><b>Adicionar foto comprobatória</b></button>
             <video id="camera-stream" autoplay></video>
-            <script>
-               const openCameraBtn = document.getElementById('open-camera-btn');
-              const cameraStream = document.getElementById('camera-stream');
-          
-              openCameraBtn.addEventListener('click', function() {
-                navigator.mediaDevices.getUserMedia({ video: true })
-                  .then(function(stream) {
-                    cameraStream.srcObject = stream;
-                  })
-                  .catch(function(error) {
-                    console.error('Ocorreu um erro ao acessar a câmera:', error);
-                  });
-              });
-            </script>
         </div>
         <div class="termo-container">
             <div class="ler-termo">
-                <input type="checkbox" id="termo" name="termo">
-                <label for="termo">Não faço uso de equipamentos</label>
+                <input type="checkbox" class="termo" name="termo1">
+                <label for="termo1">Não faço uso de equipamentos</label>
             </div>
             <div class="ler-termo">
-                <input type="checkbox" id="termo" name="termo">
-                <label for="termo">Termo de veracidade das informações prestadas</label>
+                <input type="checkbox" class="termo" name="termo2">
+                <label for="termo2">Termo de veracidade das informações prestadas</label>
             </div>
         </div>
         <div class="container2">
@@ -147,41 +129,11 @@
     </main>
     <footer>
         <ul>
-            <li><i class="fa fa-home fa-2x" style="color: #5A98FF;"></i></a></li>
-            <li><a href="../administrador/check.html" class="icones"><i class="fa fa-address-book-o fa-2x"></i></a></li>
-            <li><a href="../administrador/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
+            <li><i class="fa fa-home fa-2x" style="color: #5A98FF;"></i></li>
+            <li><a href="https://epi-assure.netlify.app/administrador/check.html" class="icones"><i class="fa fa-address-book-o fa-2x"></i></a></li>
+            <li><a href="https://epi-assure.netlify.app/administrador/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
+            <li><a href="https://epi-assure.netlify.app/administrador/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
         </ul>
     </footer>
-
-    <script src="../service-worker.js"></script>
-    <script>navigator.serviceWorker.register("../service-worker.js")</script> 
-    <script>
-        let newWorker;
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').then(reg => {
-                reg.addEventListener('updatefound', () => {
-                    // A wild service worker has appeared in reg.installing!
-                    newWorker = reg.installing;
-                    newWorker.addEventListener('statechange', () => {
-                        // Has network.state changed?
-                        switch (newWorker.state) {
-                            case 'installed':
-                            if (navigator.serviceWorker.controller) {
-                                // new update available
-                            }
-                            // No update available
-                            break;
-                        }
-                    });
-                });
-            });
-            let refreshing;
-            navigator.serviceWorker.addEventListener('controllerchange', function () {
-                if (refreshing) return;
-                window.location.reload();
-                refreshing = true;
-            });
-        }
-    </script>
 </body>
 </html>

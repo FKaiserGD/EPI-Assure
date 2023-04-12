@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
     background-color: #F1F1F1;
 }
 
@@ -13,16 +13,17 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    padding-bottom: 2%;
-    padding-top: 5%;
+    padding: 5%;
+    border-bottom: 1px solid #FFDE59;
     height: 8vh;
-    margin-left: 5%;
-    margin-bottom: 15%;
+    z-index: 99;
 }
 
 #imagem-user {
     width: 60px;
     height: 60px;
+    border: 3px solid #FFDE59;
+    border-radius: 30px;
 }
 
 #icone-requer {
@@ -46,19 +47,18 @@ header .fa {
     margin-left: 7%;
     padding-top: 6%;
     background-color: #F1F1F1;
+    color: #FFDE59;
 }
 
 footer {
     margin-top: 10%;
-    border: 1px solid #b8b3b3;
     height: 5vh;
     padding-top: 10px;
     background-color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
-    right: 0;
-    left: 0;
+    border-top: 3px solid #FFDE59;
 }
 
 .fa {

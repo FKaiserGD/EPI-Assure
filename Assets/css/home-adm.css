@@ -38,17 +38,29 @@ main h3 {
   margin-left: 5%;
   margin-top: 5%;
 }
+
+.confirm form {
+  margin-top: 8%;
+  display: flex;
+  flex-direction: row;
+}
   
-.equipamento > input[type="checkbox"] {
-  width: 40px;
-  height: 40px;
-  margin-top: 10%;
+.confirm form > input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}
+
+.confirm label {
+  margin-left: 5%;
+  font-size: 16px;
 }
   
 .icone-equip {
-  width: 70px;
-  height: 70px;
+  padding-top: 5%;
+  width: 45px;
+  height: 45px;
 }
+
   
 hr {
   text-align: center;
@@ -69,7 +81,7 @@ hr {
 .botao-solicitacao {
   display: block;
   margin: auto;
-  background-color: #303641;
+  background-color: #FFDE59;
   color: white;
   width: 350px;
   height: 48px;
@@ -82,12 +94,8 @@ hr {
   
 .botao-solicitacao .fa {
   color: white;
-  background-color: #303641;
+  background-color: #FFDE59;
   margin-right: 2%;
-}
-  
-.botao-solicitacao:hover {
-  background-color: #939597;
 }
 
 .termo-container {
@@ -107,7 +115,7 @@ hr {
   height: 25px;
 }
 
-label {
+.ler-termo label {
   font-size: 16px;
   margin-left: 3%;
 }
@@ -132,7 +140,7 @@ label {
 }
   
 b {
-  background-color: #5A98FF;
+  background-color: transparent;
   color: white;
 }
 

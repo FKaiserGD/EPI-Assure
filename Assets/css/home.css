@@ -17,18 +17,6 @@ main h3 {
   padding-top: 4%;
 }
 
-#check-equip #error{
-  color: red;
-}
-
-#check-equip #exclamation {
-  color: yellow;
-}
-
-#check-equip #check {
-  color: green;
-}
-
 .equipamento {
   display: flex;
   flex-direction: row;
@@ -39,10 +27,20 @@ main h3 {
   margin-top: 5%;
 }
 
-.equipamento > input[type="checkbox"] {
-  width: 40px;
-  height: 40px;
-  margin-top: 10%;
+.confirm form {
+  margin-top: 8%;
+  display: flex;
+  flex-direction: row;
+}
+
+.confirm form > input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}
+
+.confirm label {
+  margin-left: 5%;
+  font-size: 16px;
 }
 
 .icone-equip {
@@ -70,7 +68,7 @@ hr {
 .botao-solicitacao {
   display: block;
   margin: auto;
-  background-color: #303641;
+  background-color: #FFDE59;
   color: white;
   width: 350px;
   height: 48px;
@@ -83,12 +81,8 @@ hr {
 
 .botao-solicitacao .fa {
   color: white;
-  background-color: #303641;
+  background-color: #FFDE59;
   margin-right: 2%;
-}
-
-.botao-solicitacao:hover {
-  background-color: #939597;
 }
 
 .termo-container {
@@ -104,8 +98,9 @@ hr {
   margin-right: 2%;
 }
 
-label {
+.termo-container label {
   font-size: 14px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 

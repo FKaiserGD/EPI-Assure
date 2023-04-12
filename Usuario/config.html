@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Configure sua conta ou a forma no qual você utiliza o site. (Versão de Usuário)">
-    <link rel="manifest" href="../manifest.json" />  
     <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="stylesheet" href="../Assets/css/config.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,26 +13,26 @@
 </head>
 <body>
     <header>
-        <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="imagem do usuário" id="imagem-user">
+        <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
         <h3>Nome do Usuário</h3>
         <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer">
         <i class="fa fa-bell-o fa-2x"></i>
     </header>
     <main>
-
+    
         <div id="conta">
             <h2>Conta</h2>
-            <div id="perfil">
+            <div class="opcoes">
                 <i class="fa fa-user fa-2x"></i>
                 <p>Perfil</p>
                 <i class="fa fa-chevron-right fa-2x" id="seta"></i>
             </div>
-            <div id="senha">
+            <div class="opcoes">
                 <i class="fa fa-lock fa-2x"></i>
                 <p>Senha</p>
                 <i class="fa fa-chevron-right fa-2x" id="seta"></i>
             </div>
-            <div id="notificacoes">
+            <div class="opcoes">
                 <i class="fa fa-bell-o fa-2x"></i>
                 <p>Notificações</p>
                 <i class="fa fa-chevron-right fa-2x" id="seta"></i>
@@ -41,51 +40,25 @@
         </div>
         <div id="mais">
             <h2>Mais</h2>
-            <div id="ajuda">
+            <div class="opcoes">
                 <i class="fa fa-question-circle-o  fa-2x"></i>
                 <p>Ajuda</p>
                 <i class="fa fa-chevron-right fa-2x" id="seta"></i>
             </div>
+            <div class="opcoes">
+                <i class="fa fa-sign-out  fa-2x"></i>
+                <p>Sair</p>
+                <i class="fa fa-chevron-right fa-2x" id="seta"></i>
+            </div>
         </div>
-
     </main>
     <footer>
         <ul>
-            <li><a href="../usuario/home.html" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
-            <li><a href="../usuario/estudos.html" class="icones"><i class="fa fa-book fa-2x"></i></a></li>
-            <li><a href="../usuario/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
+            <li><a href="https://epi-assure.netlify.app/usuario/home" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
+            <li><a href="https://epi-assure.netlify.app/usuario/estudos" class="icones"><i class="fa fa-book fa-2x"></i></a></li>
+            <li><a href="https://epi-assure.netlify.app/usuario/avariar" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
             <li><i class="fa fa-cog fa-2x" style="color: #5A98FF;"></i></li>
         </ul>
     </footer>
-    <script src="../service-worker.js"></script>
-    <script>navigator.serviceWorker.register("../service-worker.js")</script> 
-    <script>
-        let newWorker;
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').then(reg => {
-                reg.addEventListener('updatefound', () => {
-                    // A wild service worker has appeared in reg.installing!
-                    newWorker = reg.installing;
-                    newWorker.addEventListener('statechange', () => {
-                        // Has network.state changed?
-                        switch (newWorker.state) {
-                            case 'installed':
-                            if (navigator.serviceWorker.controller) {
-                                // new update available
-                            }
-                            // No update available
-                            break;
-                        }
-                    });
-                });
-            });
-            let refreshing;
-            navigator.serviceWorker.addEventListener('controllerchange', function () {
-                if (refreshing) return;
-                window.location.reload();
-                refreshing = true;
-            });
-        }
-    </script>
 </body>
 </html>

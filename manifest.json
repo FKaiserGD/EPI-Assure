@@ -6,7 +6,7 @@
     "description": "Web App desenvolvido com o objetivo de monitorar o uso de EPI e educar sobre seu uso",
     "lang": "pt",
     "dir": "auto",
-    "theme_color": "#000000",
+    "theme_color": "#FFDE59",
     "background_color": "#F5F5F5",
     "orientation": "any",
     "icons": [
@@ -51,7 +51,13 @@
         "sizes": "16x16",
         "type": "image/png",
         "purpose": "any"
-        }	  
+        },
+    {
+        "src": "./Assets/images/AppIcons/apple-touch-icon.png",
+        "sizes": "180x180",
+        "type": "image/png",
+        "purpose": "any"
+    }
     ],
     "screenshots": [
         {

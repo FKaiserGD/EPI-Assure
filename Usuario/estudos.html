@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descubra mais sobre essas EPI's tão importantes no dia-a-dia. Só para usuários">
-    <link rel="manifest" href="../manifest.json" />  
     <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="stylesheet" href= "../Assets/css/estudos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +13,7 @@
 </head>
 <body>
   <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="imagem do usuário" id="imagem-user">
+    <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
     <h3>Nome do Usuário</h3>
     <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer">
     <i class="fa fa-bell-o fa-2x"></i>
@@ -32,77 +31,79 @@
       </div>
     </div>
     <div id="check-equip">
-      <div id="capacete"  onclick="abreCapacete();">
+      <div class="equipamento"  onclick="abreCapacete();">
         <img src="../Assets/images/Icones/capacete.webp" alt="" class="icone-equip">
-        <div id="capacete-confirm">
+        <div class="info">
           <h4>Capacete</h4>
           <p>Proteção para cabeça contra impactos.</p>
         </div>
       </div>
       <hr>
-      <div id="luva" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreCapacete();">
         <img src="../Assets/images/Icones/luvas.webp" alt="" class="icone-equip">
-        <div id="luva-confirm">
+        <div class="info">
           <h4>Luvas</h4>
           <p>Proteção para mãos contra riscos diversos, como químicos e mecânicos.</p>
         </div>
       </div>
       <hr>
-      <div id="oculos" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreCapacete();">
         <img src="../Assets/images/Icones/oculos-de-seguranca.webp" alt="" class="icone-equip">
-        <div id="oculos-confirm">
+        <div class="info">
           <h4>Oculos de Proteção</h4>
           <p>Proteção para os olhos contra impactos, radiações, produtos químicos.</p>
         </div>
       </div>
       <hr>
-      <div id="botas" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreCapacete();">
         <img src="../Assets/images/Icones/botas.webp" alt="" class="icone-equip">
-        <div id="botas-confirm">
+        <div class="info">
           <h4>Botas</h4>
           <p>Proteção para pés contra impactos, quedas, cortes e umidade.</p>
         </div>
       </div>
       <hr>
-      <div id="colete" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreCapacete();">
         <img src="../Assets/images/Icones/colete.webp" alt="" class="icone-equip">
-        <div id="colete-confirm">
+        <div class="info">
           <h4>Colete</h4>
-          <p>Proteção para pés contra impactos, quedas, cortes e umidade.</p>
+          <p>Proteger o corpo do trabalhador contra diversos tipos de risco.</p>
         </div>
       </div>
       <hr>
-      <div id="cones" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreCapacete();">
         <img src="../Assets/images/Icones/cone.webp" alt="" class="icone-equip">
-        <div id="cones-confirm">
+        <div class="info">
           <h4>Cones</h4>
-          <p>Proteção para pés contra impactos, quedas, cortes e umidade.</p>
+          <p>O cone de sinalização comumente usado para segurança, delimitação de espaços em obras ou estacionamento.</p>
         </div>
       </div>
       <hr>
-      <div id="fita" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreCapacete();">
         <img src="../Assets/images/Icones/fita.webp" alt="" class="icone-equip">
-        <div id="fita-confirm">
+        <div class="info">
           <h4>Fita</h4>
-          <p>Proteção para pés contra impactos, quedas, cortes e umidade.</p>
+          <p>As fitas ajudam a prevenir quedas e evitar os desagradáveis escorregões</p>
         </div>
       </div>
       <hr>
-      <div id="mascara" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreCapacete();">
         <img src="../Assets/images/Icones/mascara-medica.webp" alt="" class="icone-equip">
-        <div id="mascara-confirm">
+        <div class="info">
           <h4>Máscara</h4>
-          <p>Proteção para pés contra impactos, quedas, cortes e umidade.</p>
+          <p>Qual a finalidade do uso da máscara?
+          As máscaras funcionam como uma barreira física para a liberação dessas gotículas no ar quando há tosse, espirros e até
+          mesmo durante conversas.</p>
         </div>
       </div>
     </div>  
   </main> 
   <footer>
     <ul>
-      <li><a href="../usuario/home.html" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
+      <li><a href="https://epi-assure.netlify.app/usuario/home" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
       <li><i class="fa fa-book fa-2x" style="color: #5A98FF"></i></li>
-      <li><a href="../usuario/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
-      <li><a href="../usuario/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
+      <li><a href="https://epi-assure.netlify.app/usuario/avariar" class="icones"><i class="fa fa-exclamation-triangle fa-2x"></i></a></li>
+      <li><a href="https://epi-assure.netlify.app/usuario/config" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
     </ul>
   </footer>
   <script>
@@ -110,35 +111,5 @@
       window.open('https://epi-assure.netlify.app/usuario/estudos-det', '_self');
     }
   </script>
-  <script src="../service-worker.js"></script>
-  <script>navigator.serviceWorker.register("../service-worker.js")</script> 
-  <script>
-    let newWorker;
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').then(reg => {
-        reg.addEventListener('updatefound', () => {
-          // A wild service worker has appeared in reg.installing!
-          newWorker = reg.installing;
-          newWorker.addEventListener('statechange', () => {
-            // Has network.state changed?
-            switch (newWorker.state) {
-              case 'installed':
-              if (navigator.serviceWorker.controller) {
-                // new update available
-              }
-              // No update available
-              break;
-            }
-          });
-        });
-      });
-      let refreshing;
-      navigator.serviceWorker.addEventListener('controllerchange', function () {
-        if (refreshing) return;
-        window.location.reload();
-        refreshing = true;
-      });
-    }
-  </script> 
 </body>
 </html>

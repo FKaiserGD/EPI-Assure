@@ -1,5 +1,5 @@
 main {
-  margin-top: 25%;
+  margin-top: 30%;
 }
 
 main h3 {
@@ -7,16 +7,16 @@ main h3 {
 }
 
 #check-equip {
-  margin-top: 8%;
+  margin-top: 5%;
   margin-left: 5%;
 }
 
-#capacete {
+.equipamento {
   display: flex;
   flex-direction: row;
 }
 
-#capacete-confirm {
+.info{
   margin-left: 5%;
   margin-top: 5%;
 }
@@ -26,8 +26,9 @@ main h3 {
 }
 
 .icone-equip {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
+  padding-top: 5%;
 }
 
 hr {
@@ -37,76 +38,6 @@ hr {
   margin-bottom: 3%;
 }
 
-#luva {
-  display: flex;
-  flex-direction: row;
-}
-
-#luva-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#oculos {
-  display: flex;
-  flex-direction: row;
-}
-
-#oculos-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#botas {
-  display: flex;
-  flex-direction: row;
-}
-
-#botas-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#colete {
-  display: flex;
-  flex-direction: row;
-}
-
-#colete-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#mascara {
-  display: flex;
-  flex-direction: row;
-}
-
-#mascara-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-  margin-bottom: 20%;
-}
-
-#cones {
-  display: flex;
-  flex-direction: row;
-}
-
-#cones-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-#fita {
-  display: flex;
-  flex-direction: row;
-}
-
-#fita-confirm {
-  margin-left: 5%;
-  margin-top: 5%;
-}
 .container {
   display: flex;
   align-items: center;

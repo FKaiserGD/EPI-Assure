@@ -14,54 +14,20 @@ main {
     height: 32px;
 }
 
-#perfil {
+.opcoes {
     display: flex;
     flex-direction: row;
     margin-top: 10%;
 }
 
-#perfil p {
+.opcoes p {
     font-size: 22px;
     width: 100px;
     margin-left: 5%;
     padding-top: 1%;
 }
 
-#perfil #seta{
-    margin-left: 50%;
-}
-
-#senha {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10%;
-}
-
-#senha p {
-    font-size: 22px;
-    width: 100px;
-    margin-left: 5%;
-    padding-top: 1%;
-}
-
-#senha #seta {
-    margin-left: 50%;
-}
-
-#notificacoes {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10%;
-}
-
-#notificacoes p {
-    font-size: 22px;
-    width: 100px;
-    margin-left: 5%;
-    padding-top: 1%;
-}
-
-#notificacoes #seta {
+.opcoes #seta{
     margin-left: 50%;
 }
 
@@ -71,21 +37,4 @@ main {
     padding-top: 5%;
     margin-left: 5%;
     margin-top: 20%;
-}
-
-#ajuda {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10%;
-}
-
-#ajuda p {
-    font-size: 22px;
-    width: 100px;
-    margin-left: 5%;
-    padding-top: 1%;
-}
-
-#ajuda #seta {
-    margin-left: 50%;
 }

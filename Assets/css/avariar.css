@@ -1,0 +1,68 @@
+main {
+    margin-top: 35%;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 2%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    margin-top: 5%;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+input {
+    margin-top: 3%;
+}
+
+#titulo {
+    padding-left: 2%;
+    width: 95%;
+    height: 4.5vh;
+    text-align: left;
+    border: 1px solid #D0D5DD;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 5% auto;
+}
+
+#descricao {
+    padding-left: 2%;
+    width: 95%;
+    height: 25vh;
+    border: 1px solid #D0D5DD;
+    border-radius: 5px;
+}
+
+#descricao::placeholder {
+    top: 0;
+    left: 0;
+}
+
+button {
+    margin-top: 5%;
+    margin-left: 2%;
+    width: 95%;
+    height: 5vh;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #5A98FF;
+    color: white;
+}
+
+button .fa {
+    background-color: #5A98FF;
+    padding-right: 3%;
+}
