@@ -13,6 +13,9 @@
     <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180" type="image/x-icon">
     <title>Avariar EPI</title>
+    <!-- Adicionando o DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
 
 <body>
@@ -27,6 +30,7 @@
         <form action="">
             <label for="titulo">Título</label>
             <input type="text" name="titulo" id="titulo" placeholder="Dê um titulo para a reclamação (Máx: 30)" id="titulo">
+            <label for="Arquivo">Clique aqui para anexar uma imagem</label>
             <input type="file" name="arquivo">
             <label for="descricao">Descrição</label>
             <input type="text" name="descricao" placeholder="Descreva o porquê da reclamação (Máx: 255)" id="descricao">
@@ -36,9 +40,9 @@
     <footer>
         <ul>
             <li><a href="https://epi-assure.netlify.app/usuario/home" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
-            <li><a href="https://epi-assure.netlify.app/usuario/estudos" class="icones"><i class="fa fa-book fa-2x"></i></a></li>
-            <li><i class="fa fa-gamepad fa-2x"></i></li>
-            <li><a href="https://epi-assure.netlify.app/usuario/config" class="icones"><i class="fa fa-cog fa-2x" style="color: #5A98FF;"></i></a></li>
+            <li><a href="https://epi-assure.netlify.app/usuario/estudos" class="icones"></a><i class="fa fa-exclamation-triangle fa-2x"></i></li>
+            <li><i class="fa fa-exclamation-triangle fa-2x" style="color: #5A98FF"></i></li>
+            <li><a href="https://epi-assure.netlify.app/usuario/config" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
         </ul>
     </footer>
 </body>
