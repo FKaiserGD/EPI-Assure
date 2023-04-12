@@ -4,7 +4,7 @@ function toggleCamera() {
   const cameraStream = document.getElementById('camera-stream');
 
   // alterna a câmera atual
-  currentCamera = currentCamera === 'environment' ? 'user' : 'environment';
+  currentCamera = currentCamera === 'user' ? 'environment' : 'user';
 
   // para o fluxo de vídeo atual
   cameraStream.srcObject.getTracks().forEach(track => {
@@ -12,7 +12,7 @@ function toggleCamera() {
   });
 
   // inicia um novo fluxo de vídeo com a nova opção "facingMode"
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: currentCamera } } })
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: currentCamera } } })
     .then(function(stream) {
       cameraStream.srcObject = stream;
     })
@@ -26,22 +26,16 @@ function abreCamera() {
   const cameraStream = document.getElementById('camera-stream');
 
   openCameraBtn.addEventListener('click', function() {
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
       .then(function(stream) {
         cameraStream.srcObject = stream;
       })
       .catch(function(error) {
-        console.error('Ocorreu um erro ao acessar a câmera traseira:', error);
-        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
-          .then(function(stream) {
-            cameraStream.srcObject = stream;
-          })
-          .catch(function(error) {
-            console.error('Ocorreu um erro ao acessar a câmera frontal:', error);
-          });
+        console.error('Ocorreu um erro ao acessar a câmera:', error);
       });
   });
 }
+
 
 function tiraFoto() {
   const picture = document.getElementById('picture');
