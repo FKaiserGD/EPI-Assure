@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aqui o funcionário poderá solicitar um novo equipamento. (Versão de Usuário)">
+    <meta name="theme-color" content="#FFDE59" />
+    <link rel="stylesheet" href="../Assets/css/solicitar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
+        type="image/x-icon">
+    <title>Solicitar Equipamento</title>
+    <!-- Adicionando o DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="../rotas.js"></script>
+</head>
+
+<body>
+    <main>
+        <div id="cabecalho">
+            <button onclick="voltar()" id="volta"><i class="fa fa-arrow-left fa-2x"></i></button>
+            <h4>Solicitar Novo Equipamento</h4>
+        </div>
+        <form action="">
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo"  id="titulo-input" placeholder="Dê um titulo para a solicitação">
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" placeholder="Descreva o porquê da solicitação"></textarea>
+            <button type="submit" id="enviar"><i class="fa fa-check"></i>Solicitar</button>
+        </form>
+    </main>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 main {
     margin-top: 30%;
+    margin-top: 30%;
 }
 
 main h3 {
@@ -12,19 +13,21 @@ main h3 {
     margin-bottom: 10%;
 }
 
-#check-equip .fa {
-    padding-top: 4%;
-}
-
 #check-equip #error {
+    margin-left: 15%;
+    padding-top: 4%;
     color: red;
 }
 
 #check-equip #exclamation {
+    margin-left: 15%;
+    padding-top: 4%;
     color: #FFDE59;
 }
 
 #check-equip #check {
+    margin-left: 15%;
+    padding-top: 4%;
     color: green;
 }
 
@@ -43,6 +46,13 @@ main h3 {
     height: 80px;
 }
 
+.imagem-user {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #FFDE59;
+    border-radius: 30px;
+}
+
 hr {
     text-align: center;
     width: 350px;
@@ -50,8 +60,8 @@ hr {
     margin-bottom: 3%;
 }
 
-h4, p, label {
-    width: 220px;
+p, label {
+    width: 180px;
 }
 
 a,

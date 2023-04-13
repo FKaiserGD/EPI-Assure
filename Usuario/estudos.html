@@ -15,12 +15,13 @@
     <!-- Adicionando o DNS-prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="../rotas.js"></script>
 </head>
 <body>
   <header>
     <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
     <h3>Nome do Usuário</h3>
-    <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer">
+    <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer" onclick="abreSolicitar()">
     <i class="fa fa-bell-o fa-2x"></i>
   </header>
   <main>
@@ -44,7 +45,7 @@
         </div>
       </div>
       <hr>
-      <div class="equipamento" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreLuva();">
         <img src="../Assets/images/Icones/luvas.webp" alt="" class="icone-equip">
         <div class="info">
           <h4>Luvas</h4>
@@ -52,7 +53,7 @@
         </div>
       </div>
       <hr>
-      <div class="equipamento" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreOculos();">
         <img src="../Assets/images/Icones/oculos-de-seguranca.webp" alt="" class="icone-equip">
         <div class="info">
           <h4>Oculos de Proteção</h4>
@@ -60,7 +61,7 @@
         </div>
       </div>
       <hr>
-      <div class="equipamento" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreBota();">
         <img src="../Assets/images/Icones/botas.webp" alt="" class="icone-equip">
         <div class="info">
           <h4>Botas</h4>
@@ -68,7 +69,7 @@
         </div>
       </div>
       <hr>
-      <div class="equipamento" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreColete();">
         <img src="../Assets/images/Icones/colete.webp" alt="" class="icone-equip">
         <div class="info">
           <h4>Colete</h4>
@@ -76,7 +77,7 @@
         </div>
       </div>
       <hr>
-      <div class="equipamento" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreCone();">
         <img src="../Assets/images/Icones/cone.webp" alt="" class="icone-equip">
         <div class="info">
           <h4>Cones</h4>
@@ -84,7 +85,7 @@
         </div>
       </div>
       <hr>
-      <div class="equipamento" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreFita();">
         <img src="../Assets/images/Icones/fita.webp" alt="" class="icone-equip">
         <div class="info">
           <h4>Fita</h4>
@@ -92,7 +93,7 @@
         </div>
       </div>
       <hr>
-      <div class="equipamento" onclick="abreCapacete();">
+      <div class="equipamento" onclick="abreMascara();">
         <img src="../Assets/images/Icones/mascara-medica.webp" alt="" class="icone-equip">
         <div class="info">
           <h4>Máscara</h4>
@@ -107,14 +108,9 @@
     <ul>
       <li><a href="https://epi-assure.netlify.app/usuario/home" class="icones"><i class="fa fa-home fa-2x"></i></a></li>
       <li><i class="fa fa-book fa-2x" style="color: #5A98FF"></i></li>
-      <li><a href="https://epi-assure.netlify.app/usuario/avariar" class="icones"><i class="fa fa-exclamation-triangle fa-2x"></i></a></li>
+      <li><a href="https://epi-assure.netlify.app/usuario/game" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
       <li><a href="https://epi-assure.netlify.app/usuario/config" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
     </ul>
   </footer>
-  <script>
-    function abreCapacete() {
-      window.open('https://epi-assure.netlify.app/usuario/estudos-det', '_self');
-    }
-  </script>
 </body>
 </html>

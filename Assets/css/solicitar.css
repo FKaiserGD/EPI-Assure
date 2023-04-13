@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background-color: #F1F1F1;
+}
+
+main {
+    margin-top: 10%;
+}
+
+#cabecalho {
+    display: flex;
+    flex-direction: row;
+    margin-left: 3%;
+}
+
+#volta {
+    border: transparent;
+    width: 30px;
+    height: 35px;
+    margin-right: 10%;
+}
+
+h4 {
+    font-size: 20px;
+    padding-top: 1%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 3%;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+
+#titulo-input {
+    width: 95%;
+    height: 3vh;
+    border: 1px solid #D0D5DD;
+    border-radius: 5px;
+    padding-left: 2%;
+    margin-bottom: 10%;
+}
+
+#descricao {
+    width: 95%;
+    height: 10vh;
+    border: 1px solid #D0D5DD;
+    border-radius: 5px;
+    padding-left: 2%;
+    margin-bottom: 10%;
+}
+
+#enviar {
+    display: block;
+    margin: auto;
+    width: 97%;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    background-color: #5A98FF;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#enviar .fa{
+    background-color: #5A98FF;
+    margin-right: 4%;
+}

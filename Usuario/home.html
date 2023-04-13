@@ -16,12 +16,25 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <script src="../camera.js"></script>
+    <script src="../rotas.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const equipamentos = document.querySelectorAll('.equipamento');
+          equipamentos.forEach(equipamento => {
+            equipamento.addEventListener('click', () => {
+              const checkbox = equipamento.querySelector('input[type="checkbox"]');
+              checkbox.checked = !checkbox.checked;
+            });
+          });
+        });
+
+    </script>
 </head>
 <body>
   <header>
     <img src="../Assets/images/Icones/usuario.webp"  alt="imagem do usuário" id="imagem-user">
     <h3>Nome do Usuário</h3>
-    <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer">
+    <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer" onclick="abreSolicitar()">
     <i class="fa fa-bell-o fa-2x"></i>
   </header>
   <main>
@@ -52,7 +65,7 @@
       <div class="equipamento">
         <img src="../Assets/images/Icones/oculos-de-seguranca.webp" alt="" class="icone-equip">
         <div class="confirm">
-          <h4>Oculos de Proteção</h4>
+          <h4>Óculos de Proteção</h4>
           <form action="">
             <input type="checkbox" name="oculos">
             <label for="oculos">Sim</label>
@@ -138,7 +151,7 @@
     <ul>
       <li><i class="fa fa-home fa-2x" style="color: #5A98FF;"></i></li>
       <li><a href="https://epi-assure.netlify.app/usuario/estudos" class="icones"><i class="fa fa-book fa-2x"></i></a></li>
-      <li><a href="https://epi-assure.netlify.app/usuario/avaria" class="icones"><i class="fa fa-exclamation-triangle fa-2x"></i></a></li>
+      <li><a href="https://epi-assure.netlify.app/usuario/game" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
       <li><a href="https://epi-assure.netlify.app/usuario/config" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
     </ul>
   </footer>
