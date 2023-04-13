@@ -16,7 +16,7 @@ function userConfig() {
   window.open('https://epi-assure.netlify.app/usuario/config', '_self');
 }
 
-function abreSolicitar() {
+function userSolicitar() {
    window.open('https://epi-assure.netlify.app/usuario/solicitar', '_self');
 }
 
@@ -69,6 +69,11 @@ function admGame() {
 function admConfig() {
   window.open('https://epi-assure.netlify.app/administrador/config', '_self');
 }
+
+function admSolicitar() {
+   window.open('https://epi-assure.netlify.app/usuario/add-epi', '_self');
+}
+
 
 /* Rotas Gerais */
 

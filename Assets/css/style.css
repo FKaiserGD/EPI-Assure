@@ -29,7 +29,7 @@ header {
 #icone-requer {
     width: 35px;
     height: 35px;
-    margin-left: 7%;
+    margin-left: 15%;
     padding-top: 5.5%;
     background-color: #F1F1F1;
 }
@@ -43,12 +43,6 @@ h3 {
     margin-left: 5%;
 }
 
-header .fa {
-    margin-left: 7%;
-    padding-top: 6%;
-    background-color: #F1F1F1;
-    color: #FFDE59;
-}
 
 footer {
     margin-top: 10%;
