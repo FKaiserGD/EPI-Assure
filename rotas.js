@@ -1,3 +1,25 @@
+/* Rotas de Usuário */
+
+function userHome() {
+  window.open('https://epi-assure.netlify.app/usuario/home', '_self');
+}
+
+function userEstudo() {
+  window.open('https://epi-assure.netlify.app/usuario/estudos', '_self');
+}
+
+function userGame() {
+  window.open('https://epi-assure.netlify.app/usuario/game', '_self');
+}
+
+function userConfig() {
+  window.open('https://epi-assure.netlify.app/usuario/config', '_self');
+}
+
+function abreSolicitar() {
+   window.open('https://epi-assure.netlify.app/usuario/solicitar', '_self');
+}
+
 function abreCapacete() {
   window.open('https://epi-assure.netlify.app/usuario/estudos-det', '_self');
 }
@@ -30,9 +52,26 @@ function abreCone() {
   window.open('https://epi-assure.netlify.app/usuario/estudos-det', '_self');
 }
 
-function abreSolicitar() {
-   window.open('https://epi-assure.netlify.app/usuario/solicitar', '_self');
+/* Rotas de Admnistrador */
+
+function admHome() {
+  window.open('https://epi-assure.netlify.app/administrador/home', '_self');
 }
+
+function admCheck() {
+  window.open('https://epi-assure.netlify.app/administrador/check', '_self');
+}
+
+function admGame() {
+  window.open('https://epi-assure.netlify.app/administrador/game', '_self');
+}
+
+function admConfig() {
+  window.open('https://epi-assure.netlify.app/administrador/config', '_self');
+}
+
+/* Rotas Gerais */
+
 
 function sair() {
   window.open('https://epi-assure.netlify.app/login', '_self');

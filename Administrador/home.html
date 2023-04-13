@@ -16,6 +16,18 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <script src="../camera.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const equipamentos = document.querySelectorAll('.equipamento');
+            equipamentos.forEach(equipamento => {
+                equipamento.addEventListener('click', () => {
+                    const checkbox = equipamento.querySelector('input[type="checkbox"]');
+                    checkbox.checked = !checkbox.checked;
+                });
+            });
+        });
+
+    </script>
 </head>
 <body>
     <header>
@@ -115,8 +127,18 @@
             </div>
         </div>
         <div class="container1">
-            <button id="open-camera-btn" class="botao-solicitacao" onclick="abreCamera()"><i class="fa fa-plus fa-1x"></i><b>Adicionar foto comprobatória</b></button>
+            <button id="open-camera-btn" class="botao-solicitacao" onclick="abreCamera()"><i class="fa fa-plus fa-1x"></i>
+                Adicionar foto comprobatória</button>
             <video id="camera-stream" autoplay></video>
+        </div>
+        <div id="botoes-cam">
+            <ul>
+                <li><button id="take-picture-btn" class="opcoes-cam" onclick="tiraFoto()"><i
+                            class="fa fa-camera fa-2x"></i></button></li>
+                <li><button id="toggle-camera-btn" class="opcoes-cam" onclick="toggleCamera()"><i
+                            class="fa fa-refresh fa-2x"></i></button></li>
+            </ul>
+            <img id="picture" src="">
         </div>
         <div class="termo-container">
             <div class="ler-termo">
@@ -135,9 +157,9 @@
     <footer>
         <ul>
             <li><i class="fa fa-home fa-2x" style="color: #5A98FF;"></i></li>
-            <li><a href="https://epi-assure.netlify.app/administrador/check.html" class="icones"><i class="fa fa-address-book-o fa-2x"></i></a></li>
-            <li><a href="https://epi-assure.netlify.app/administrador/game.html" class="icones"><i class="fa fa-gamepad fa-2x"></i></a></li>
-            <li><a href="https://epi-assure.netlify.app/administrador/config.html" class="icones"><i class="fa fa-cog fa-2x"></i></a></li>
+            <li><i class="fa fa-book fa-2x" onclick="admCheck()"></i></li>
+            <li><i class="fa fa-gamepad fa-2x" onclick="admGame()"></i></li>
+            <li><i class="fa fa-cog fa-2x" onclick="admConfig()"></i></li>
         </ul>
     </footer>
 </body>
