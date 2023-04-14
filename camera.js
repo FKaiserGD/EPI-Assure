@@ -47,6 +47,7 @@ function tiraFoto() {
   const dataUrl = canvas.toDataURL('image/png');
   picture.setAttribute('src', dataUrl);
   picture.style.width = "100%";
+  picture.style.display = "block"; // exibe a imagem após o clique no botão
 }
 
 // adiciona os listeners após o carregamento completo do documento
@@ -59,4 +60,7 @@ window.onload = function() {
 
   const openCameraBtn = document.getElementById('open-camera-btn');
   openCameraBtn.addEventListener('click', abreCamera);
+
+  const picture = document.getElementById('picture');
+  picture.style.display = "none"; // esconde a imagem antes do clique no botão
 };
