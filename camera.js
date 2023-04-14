@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentCamera = "user";
   const constraints = {
     video: {
-      facingMode: currentCamera
+      facingMode: currentCamera,
+      width: { ideal: 640 },
+      height: { ideal: 480 }
     }
   };
 
@@ -45,15 +47,24 @@ document.addEventListener("DOMContentLoaded", function() {
   function toggleCamera() {
     useFrontCamera = !useFrontCamera;
     currentCamera = useFrontCamera ? "user" : "environment";
-
+    if (useFrontCamera) {
+      video.style.transform = "scaleX(-1)";
+    } else {
+      video.style.transform = "none";
+    }
     initializeCamera();
   }
 
-  function tiraFoto() {
+  function takePicture() {
     const canvas = document.createElement("canvas");
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     const ctx = canvas.getContext("2d");
+
+    if (useFrontCamera) {
+      ctx.translate(canvas.width, 0);
+      ctx.scale(-1, 1);
+    }
 
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
@@ -64,6 +75,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // handle events
   toggleCameraBtn.addEventListener("click", toggleCamera);
-  takePictureBtn.addEventListener("click", tiraFoto);
+  takePictureBtn.addEventListener("click", takePicture);
+
+  // initialize camera
   initializeCamera();
 });
