@@ -154,7 +154,8 @@ video {
 
 #picture {
   margin-top: 10%;
-  width: 90%;
+  min-width: 300px;
+  max-width: 350px;
   margin-left: 5%;
   margin-right: 5%;
   transform: scaleX(-1);

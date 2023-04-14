@@ -171,7 +171,8 @@ video {
 
 #picture {
   margin: 10% 5% 0 5%;
-  width: 90%;
+  min-width: 300px;
+  max-width: 350px;
   transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
   border: 1px solid #D5D5D5;
