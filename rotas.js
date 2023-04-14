@@ -71,7 +71,7 @@ function admConfig() {
 }
 
 function admSolicitar() {
-   window.open('https://epi-assure.netlify.app/usuario/add-epi', '_self');
+   window.open('https://epi-assure.netlify.app/administrador/add-epi', '_self');
 }
 
 

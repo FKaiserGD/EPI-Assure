@@ -176,6 +176,7 @@ video {
   -webkit-transform: scaleX(-1);
   border: 1px solid #D5D5D5;
   border-radius: 25px;
+  color: transparent;
 }
 
 .opcoes-cam {
