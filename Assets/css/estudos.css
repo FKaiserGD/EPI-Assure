@@ -22,6 +22,10 @@ main h3 {
   margin-top: 5%;
 }
 
+.info p {
+  width: 250px;
+}
+
 #check-equip>input[type="checkbox"] {
   margin-top: 10%;
 }

@@ -25,14 +25,14 @@ h4, h6 {
 h5 {
     text-align: center;
     font-size: 20px;
-    margin-top: 15%;
+    margin-top: 20%;
 }
 
 #ilustra {
     display: block;
-    margin: 0 5% 20% 5%;
-    width: 90%;
-    height: 13vh;
+    margin: auto;
+    width: 350px;
+    height: 110px;
 }
 
 #ganhe-pontos {
@@ -41,4 +41,5 @@ h5 {
     font-size: 18px;
     font-weight: bold;
     color: black;
+    margin-top: 30%;
 }
