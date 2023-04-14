@@ -1,66 +1,69 @@
-let currentCamera = 'environment'; // define a câmera atual como traseira
+document.addEventListener("DOMContentLoaded", function() {
+  if (!("mediaDevices" in navigator) || !("getUserMedia" in navigator.mediaDevices)) {
+    alert("API de câmera não está disponível em seu navegador");
+    return;
+  }
 
-function toggleCamera() {
-  const cameraStream = document.getElementById('camera-stream');
+  // get page elements
+  const video = document.querySelector("#camera-stream");
+  const toggleCameraBtn = document.querySelector("#open-camera-btn");
+  const takePictureBtn = document.querySelector("#take-picture-btn");
 
-  // alterna a câmera atual
-  currentCamera = currentCamera === 'user' ? 'environment' : 'user';
+  // video constraints
+  let currentCamera = "user";
+  const constraints = {
+    video: {
+      facingMode: currentCamera
+    }
+  };
 
-  // para o fluxo de vídeo atual
-  cameraStream.srcObject.getTracks().forEach(track => {
-    track.stop();
-  });
+  // initialize
+  async function initializeCamera() {
+    if (video.srcObject) {
+      const stream = video.srcObject;
+      const tracks = stream.getTracks();
 
-  // inicia um novo fluxo de vídeo com a nova opção "facingMode"
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: currentCamera } })
-    .then(function(stream) {
-      cameraStream.srcObject = stream;
-    })
-    .catch(function(error) {
-      console.error('Ocorreu um erro ao acessar a câmera:', error);
-    });
-}
+      tracks.forEach(function(track) {
+        track.stop();
+      });
 
-function abreCamera() {
-  const openCameraBtn = document.getElementById('open-camera-btn');
-  const cameraStream = document.getElementById('camera-stream');
+      video.srcObject = null;
+    }
 
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: currentCamera } })
-    .then(function(stream) {
-      cameraStream.srcObject = stream;
-    })
-    .catch(function(error) {
-      console.error('Ocorreu um erro ao acessar a câmera:', error);
-    });
-}
+    constraints.video.facingMode = currentCamera;
 
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      video.srcObject = stream;
+    } catch (err) {
+      alert("Não foi possível acessar a câmera");
+    }
+  }
 
-function tiraFoto() {
-  const picture = document.getElementById('picture');
-  const cameraStream = document.getElementById('camera-stream');
+  let useFrontCamera = true;
 
-  const canvas = document.createElement('canvas');
-  canvas.width = cameraStream.videoWidth;
-  canvas.height = cameraStream.videoHeight;
-  canvas.getContext('2d').drawImage(cameraStream, 0, 0, canvas.width, canvas.height);
+  function toggleCamera() {
+    useFrontCamera = !useFrontCamera;
+    currentCamera = useFrontCamera ? "user" : "environment";
 
-  const dataUrl = canvas.toDataURL('image/png');
-  picture.setAttribute('src', dataUrl);
-  picture.style.width = "100%";
-  picture.style.display = "block"; // exibe a imagem após o clique no botão
-}
+    initializeCamera();
+  }
 
-// adiciona os listeners após o carregamento completo do documento
-window.onload = function() {
-  const toggleCameraBtn = document.getElementById('toggle-camera-btn');
-  toggleCameraBtn.addEventListener('click', toggleCamera);
+  function tiraFoto() {
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext("2d");
 
-  const takePictureBtn = document.getElementById('take-picture-btn');
-  takePictureBtn.addEventListener('click', tiraFoto);
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-  const openCameraBtn = document.getElementById('open-camera-btn');
-  openCameraBtn.addEventListener('click', abreCamera);
+    const picture = document.querySelector("#picture");
+    picture.src = canvas.toDataURL("image/png");
+    picture.style.display = "block";
+  }
 
-  const picture = document.getElementById('picture');
-  picture.style.display = "none"; // esconde a imagem antes do clique no botão
-};
+  // handle events
+  toggleCameraBtn.addEventListener("click", toggleCamera);
+  takePictureBtn.addEventListener("click", tiraFoto);
+  initializeCamera();
+});
