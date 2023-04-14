@@ -153,6 +153,7 @@ video {
 }
 
 #picture {
+  display: none;
   margin-top: 10%;
   min-width: 300px;
   max-width: 350px;
