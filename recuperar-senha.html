@@ -8,6 +8,7 @@
     <meta name="description"
         content="Recupere a sua senha caso tenha se esquecido ou perdido, para continuar usando nossa aplicação.">
     <meta name="theme-color" content="#FFDE59" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="./Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
         type="image/x-icon">
@@ -21,7 +22,14 @@
         }
 
         header {
+            display: flex;
+            flex-direction: row;
             margin-top: 30%;
+        }
+
+        .fa {
+            margin-left: 5%;
+            padding-top: 3%;
         }
 
         img#logo {
@@ -105,10 +113,12 @@
     <!-- Adicionando o DNS-prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="rotas.js"></script>
 </head>
 
 <body>
     <header>
+        <i class="fa fa-arrow-left fa-2x" id="volta" onclick="volta()"></i>
         <img src="./Assets/images/Logo/logo.webp" alt="logo" id="logo">
     </header>
     <main>
@@ -120,7 +130,7 @@
         <form>
             <input type="text" placeholder="Nome Completo" autocomplete="additional-name">
             <input type="text" placeholder="Email Corporativo" autocomplete="email">
-            <button><a href="https://epi-assure.netlify.app/confirma-senha">Enviar Código</a>
+            <button><a href="https://epi-assure.netlify.app/confirmar-email">Enviar Código</a>
         </form>
     </main>
 </body>

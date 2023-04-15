@@ -33,37 +33,44 @@ form {
     display: flex;
     flex-direction: column;
     margin-top: 10%;
-    margin-left: 3%;
 }
 
 label {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 3%;
+    margin-left: 5%;
 }
 
 #titulo-input {
-    width: 95%;
+    width: 340px;
     height: 3vh;
     border: 1px solid #D0D5DD;
     border-radius: 5px;
     padding-left: 2%;
     margin-bottom: 10%;
+    margin-left: 5%;
+}
+
+input, textarea {
+    display: block;
+    margin: auto;
 }
 
 #descricao {
-    width: 95%;
+    width: 340px;
     height: 10vh;
     border: 1px solid #D0D5DD;
     border-radius: 5px;
     padding-left: 2%;
     margin-bottom: 10%;
+    margin-left: 5%;
 }
 
 #enviar {
     display: block;
     margin: auto;
-    width: 97%;
+    width: 90%;
     text-align: center;
     border: 0;
     border-radius: 5px;
