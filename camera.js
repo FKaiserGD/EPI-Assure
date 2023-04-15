@@ -37,23 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
       video.srcObject = stream;
-
-      if(currentCamera === 'user') {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        ctx.translate(canvas.width, 0);
-        ctx.scale(-1, 1);
-
-        const intervalId = setInterval(() => {
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-          video.style.transform = `rotateY(180deg)`;
-        }, 50);
-        toggleCameraBtn.onclick = () => {
-          clearInterval(intervalId);
-        }
-      }
     } catch (err) {
       alert("Não foi possível acessar a câmera");
     }
@@ -79,11 +62,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const ctx = canvas.getContext("2d");
 
     if (useFrontCamera) {
+      // apply horizontal flip to the canvas context
       ctx.translate(canvas.width, 0);
       ctx.scale(-1, 1);
     }
 
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // create a temporary canvas to apply the horizontal flip to the camera image
+    const tmpCanvas = document.createElement("canvas");
+    tmpCanvas.width = video.videoWidth;
+    tmpCanvas.height = video.videoHeight;
+    const tmpCtx = tmpCanvas.getContext("2d");
+    tmpCtx.translate(video.videoWidth, 0);
+    tmpCtx.scale(-1, 1);
+    tmpCtx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+    // draw the flipped camera image onto the main canvas
+    ctx.drawImage(tmpCanvas, 0, 0, video.videoWidth, video.videoHeight);
 
     const picture = document.querySelector("#picture");
     picture.src = canvas.toDataURL("image/png");
