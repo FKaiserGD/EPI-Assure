@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Recupere a sua senha caso tenha se esquecido ou perdido, para continuar usando nossa aplicação.">
+    <meta name="description" content="Terceira etapa da recuperação de senha: Parabéns. Volte a tela de login e utilize sua nova senha">
     <meta name="theme-color" content="#FFDE59" />
     <link rel="shortcut icon" href="./Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
         type="image/x-icon">
-    <title>Recuperar Senha</title>
+    <title>Confirmado</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -64,7 +64,7 @@
             margin-bottom: 3%;
         }
 
-        form > input {
+        form>input {
             background-color: white;
             width: 300px;
             height: 55px;
@@ -87,17 +87,10 @@
             background-color: #5A98FF;
             border-radius: 5px;
             border: solid 0px transparent;
+            margin-top: 20%;
         }
 
         a {
-            color: black;
-            font-size: 15px;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-        }
-
-        form a {
             color: white;
             text-decoration: none;
         }
@@ -114,14 +107,10 @@
     <main>
         <div id="texto">
             <h3>Recuperar dados</h3>
-            <h4>Por favor, preencha os dados abaixo</h4>
-            <h6>Você receberá um email de confirmação!</h6>
+            <h4>Código validado!</h4>
+            <h6>Você receberá suas credenciais por email.</h6>
+            <button><a href="https://epi-assure.netlify.app/login">Voltar ao Login</a>
         </div>
-        <form>
-            <input type="text" placeholder="Nome Completo" autocomplete="additional-name">
-            <input type="text" placeholder="Email Corporativo" autocomplete="email">
-            <button><a href="https://epi-assure.netlify.app/confirma-senha">Enviar Código</a>
-        </form>
     </main>
 </body>
 

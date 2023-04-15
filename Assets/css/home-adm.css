@@ -77,6 +77,13 @@ hr {
   flex-direction: column;
   justify-content: center;
 }
+
+.container1 p {
+  margin-top: 5%;
+  color: gray;
+  font-size: 14px;
+  text-align: center;
+}
   
 .botao-solicitacao {
   display: block;

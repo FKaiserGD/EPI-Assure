@@ -20,6 +20,10 @@ function userSolicitar() {
    window.open('https://epi-assure.netlify.app/usuario/solicitar', '_self');
 }
 
+function userAjuda() {
+   window.open('https://epi-assure.netlify.app/usuario/ajuda', '_self');
+}
+
 function abreCapacete() {
   window.open('https://epi-assure.netlify.app/usuario/estudos-det', '_self');
 }
@@ -74,6 +78,9 @@ function admSolicitar() {
    window.open('https://epi-assure.netlify.app/administrador/add-epi', '_self');
 }
 
+function admAjuda() {
+   window.open('https://epi-assure.netlify.app/administrador/ajuda', '_self');
+}
 
 /* Rotas Gerais */
 

@@ -1,0 +1,43 @@
+main {
+    margin-top: 35%;
+}
+
+#titulo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+}
+
+#titulo h2 {
+    margin-left: 10%;
+}
+
+#ajuda {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    margin-left: 5%;
+}
+
+#volta {
+    width: 20px;
+    height: 20px;
+}
+
+#icone {
+    width: 42px;
+    height: 42px;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+.opcoes p {
+    font-size: 20px;
+    width: 250px;
+    margin-left: 5%;
+    padding-top: 1%;
+}

@@ -127,15 +127,21 @@
       </div>
     </div>
     <div class="container1">
-      <button id="open-camera-btn" class="botao-solicitacao" onclick="abreCamera()"><i class="fa fa-plus fa-1x"></i> Adicionar foto comprobatória</button>
-      <video id="camera-stream" autoplay></video>
+      <button id="open-camera-btn" class="botao-solicitacao" onclick="toggleCamera()">
+        <i class="fa fa-plus fa-1x"></i> Adicionar foto comprobatória
+      </button>
+      <p>Clique novamente no botão para mudar para câmera frontal ou traseira de seu dipositivo.</p>
+      <video id="camera-stream" style="transform: scaleX(-1);" autoplay></video>
     </div>
     <div id="botoes-cam">
       <ul>
-        <li><button id="take-picture-btn" class="opcoes-cam" onclick="tiraFoto()"><abbr title="Foto"></abbr><i class="fa fa-camera fa-2x"></i></button></li>
-        <li><button id="toggle-camera-btn" class="opcoes-cam" onclick="toggleCamera()"><i class="fa fa-refresh fa-2x"><abbr title="Câmera Traseira/Frontal"></abbr></i></button></li>
+        <li>
+          <button id="take-picture-btn" class="opcoes-cam" onclick="tiraFoto()" aria-label="Tirar Foto">
+            <i class="fa fa-camera fa-2x"></i>
+          </button>
+        </li>
       </ul>
-      <img id="picture" alt="suaFoto" src="">
+      <img id="picture" alt="suaFoto" style="display: none;" src="">
     </div>
     <div class="termo-container">
       <input type="checkbox" id="termo" name="termo">
