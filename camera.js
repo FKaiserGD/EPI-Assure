@@ -57,24 +57,22 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function takePicture() {
-    const canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    const ctx = canvas.getContext("2d");
+  const canvas = document.createElement("canvas");
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const ctx = canvas.getContext("2d");
 
-    if (useFrontCamera) {
-      ctx.translate(canvas.width, 0);
-      ctx.scale(-1, 1);
-    }
-
-    const angle = useFrontCamera ? -90 : 90;
-    ctx.rotate(angle * Math.PI / 180);
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-    const picture = document.querySelector("#picture");
-    picture.src = canvas.toDataURL("image/png");
-    picture.style.display = "block";
+  if (currentCamera === "user") {
+    ctx.translate(canvas.width, 0);
+    ctx.scale(-1, 1);
   }
+
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  const picture = document.querySelector("#picture");
+  picture.src = canvas.toDataURL("image/png");
+  picture.style.display = "block";
+}
 
   // handle events
   toggleCameraBtn.addEventListener("click", toggleCamera);
