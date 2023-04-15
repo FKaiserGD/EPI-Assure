@@ -1,13 +1,13 @@
 {
-    "name": "EPI ASSURE",
-    "short_name": "EPI ASSURE",
+    "name": "EPIAssure",
+    "short_name": "EPIAssure",
     "start_url": "https://epi-assure.netlify.app",
     "display": "standalone",
     "description": "Web App desenvolvido com o objetivo de monitorar o uso de EPI e educar sobre seu uso",
     "lang": "pt",
     "dir": "auto",
     "theme_color": "#FFDE59",
-    "background_color": "#F5F5F5",
+    "background_color": "#FFDE59",
     "orientation": "any",
     "icons": [
         {
