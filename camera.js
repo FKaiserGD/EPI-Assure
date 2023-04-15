@@ -37,6 +37,23 @@ document.addEventListener("DOMContentLoaded", function() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
       video.srcObject = stream;
+
+      if(currentCamera === 'user') {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        ctx.translate(canvas.width, 0);
+        ctx.scale(-1, 1);
+
+        const intervalId = setInterval(() => {
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          video.style.transform = `rotateY(180deg)`;
+        }, 50);
+        toggleCameraBtn.onclick = () => {
+          clearInterval(intervalId);
+        }
+      }
     } catch (err) {
       alert("Não foi possível acessar a câmera");
     }
@@ -73,24 +90,10 @@ document.addEventListener("DOMContentLoaded", function() {
     picture.style.display = "block";
   }
 
-  function updateOrientation() {
-    if (window.orientation == 90 || window.orientation == -90) {
-      constraints.video.width = { ideal: 480 };
-      constraints.video.height = { ideal: 640 };
-    } else {
-      constraints.video.width = { ideal: 640 };
-      constraints.video.height = { ideal: 480 };
-    }
-    initializeCamera();
-  }
-
   // handle events
   toggleCameraBtn.addEventListener("click", toggleCamera);
   takePictureBtn.addEventListener("click", takePicture);
 
   // initialize camera
   initializeCamera();
-
-  // update camera orientation on device orientation change
-  window.addEventListener("orientationchange", updateOrientation);
 });
