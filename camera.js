@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
       video.srcObject = stream;
+      video.style.transform = "scaleX(-1)";
     } catch (err) {
       alert("Não foi possível acessar a câmera");
     }
@@ -61,12 +62,19 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.height = video.videoHeight;
     const ctx = canvas.getContext("2d");
 
+    // apply horizontal flip transformation if using front camera
     if (useFrontCamera) {
       ctx.translate(canvas.width, 0);
       ctx.scale(-1, 1);
     }
 
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    // apply horizontal flip transformation if using front camera
+    if (useFrontCamera) {
+      ctx.translate(canvas.width, 0);
+      ctx.scale(-1, 1);
+    }
 
     const picture = document.querySelector("#picture");
     picture.src = canvas.toDataURL("image/png");
