@@ -13,7 +13,7 @@ acumulam pontos e conquistas por manterem um uso adequado de EPIs. Por fim, o ap
 
 <img align="upper" height="200" width="200" src="https://media.discordapp.net/attachments/1000253093805559849/1096174292443607040/qr-code.png?width=586&height=586" alt="qr code do app">
 
-🧷 Link da aplicação: https://epi-assure.netlify.app [![Netlify Status](https://api.netlify.com/api/v1/badges/9e3932eb-4f21-4cab-aeae-b94678d8c8bb/deploy-status)](https://app.netlify.com/sites/epi-assure/deploys)
+🔗 Link da aplicação: https://epi-assure.netlify.app [![Netlify Status](https://api.netlify.com/api/v1/badges/9e3932eb-4f21-4cab-aeae-b94678d8c8bb/deploy-status)](https://app.netlify.com/sites/epi-assure/deploys)
 
 ## Tecnologias Utilizadas
 
