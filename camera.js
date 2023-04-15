@@ -71,12 +71,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const picture = document.querySelector("#picture");
     picture.src = canvas.toDataURL("image/png");
     picture.style.display = "block";
-    
-    if (useFrontCamera) {
-      picture.style.transform = "scaleX(-1)";
+  }
+
+  function updateOrientation() {
+    if (window.orientation == 90 || window.orientation == -90) {
+      constraints.video.width = { ideal: 480 };
+      constraints.video.height = { ideal: 640 };
     } else {
-      picture.style.transform = "none";
+      constraints.video.width = { ideal: 640 };
+      constraints.video.height = { ideal: 480 };
     }
+    initializeCamera();
   }
 
   // handle events
@@ -85,4 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // initialize camera
   initializeCamera();
+
+  // update camera orientation on device orientation change
+  window.addEventListener("orientationchange", updateOrientation);
 });
