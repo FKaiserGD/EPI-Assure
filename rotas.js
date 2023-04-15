@@ -92,3 +92,7 @@ function sair() {
 function volta() {
   window.history.back();
 }
+
+function index() {
+  window.open('https://epi-assure.netlify.app', '_self');
+}
