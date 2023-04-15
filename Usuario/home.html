@@ -17,18 +17,7 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <script src="../camera.js"></script>
     <script src="../rotas.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-          const equipamentos = document.querySelectorAll('.equipamento');
-          equipamentos.forEach(equipamento => {
-            equipamento.addEventListener('click', () => {
-              const checkbox = equipamento.querySelector('input[type="checkbox"]');
-              checkbox.checked = !checkbox.checked;
-            });
-          });
-        });
-
-    </script>
+    <script src="../confirma.js"></script>
 </head>
 <body>
   <header>
