@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     video: {
       facingMode: currentCamera,
       width: { ideal: 640 },
-      height: { ideal: 480 },
-      aspectRatio: { ideal: 1 }
+      height: { ideal: 480 }
     }
   };
 
@@ -57,22 +56,28 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function takePicture() {
-  const canvas = document.createElement("canvas");
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  const ctx = canvas.getContext("2d");
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext("2d");
 
-  if (currentCamera === "user") {
-    ctx.translate(canvas.width, 0);
-    ctx.scale(-1, 1);
+    if (useFrontCamera) {
+      ctx.translate(canvas.width, 0);
+      ctx.scale(-1, 1);
+    }
+
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    const picture = document.querySelector("#picture");
+    picture.src = canvas.toDataURL("image/png");
+    picture.style.display = "block";
+    
+    if (useFrontCamera) {
+      picture.style.transform = "scaleX(-1)";
+    } else {
+      picture.style.transform = "none";
+    }
   }
-
-  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-  const picture = document.querySelector("#picture");
-  picture.src = canvas.toDataURL("image/png");
-  picture.style.display = "block";
-}
 
   // handle events
   toggleCameraBtn.addEventListener("click", toggleCamera);
