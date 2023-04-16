@@ -103,7 +103,7 @@ function regulamenta() {
 }
 
 function duvida() {
-   window.open('https://epi-assure.netlify.app/ajuda/duvidas', '_self');
+   window.open('https://epi-assure.netlify.app/ajuda/duvida', '_self');
 }
 
 function dicaUso() {
