@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saiba como ganhar e multiplicar seus pontos.">
+    <meta name="theme-color" content="#FFDE59" />
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
+        type="image/x-icon">
+    <title>Ganhe Pontos</title>
+    <!-- CSS -->
+    <style>
+        header {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5%;
+        }
+
+        header h2 {
+            margin-left: 10%;
+            padding-top: 11%;
+        }
+
+        main {
+            margin: 35% 0 20% 5%;
+        }
+
+        #volta {
+            width: 20px;
+            height: 20px;
+            padding-top: 10%;
+        }
+
+        .maneira {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20%;
+        }
+
+        #info-ponto {
+            margin-left: 5%;
+            width: 300px;
+        }
+
+        hr {
+            text-align: center;
+            width: 350px;
+            margin-top: 5%;
+        }
+    </style>
+    <!-- Adicionando o DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="../js/rotas.js"></script>
+</head>
+
+<body>
+    <header>
+        <i class="fa fa-arrow-left fa-2x" id="volta" onclick="volta()"></i>
+        <h2>Ganhe Pontos</h2>
+    </header>
+    <main>
+        <div class="maneira">
+            <i class="fa fa-gamepad fa-2x"></i>
+            <div id="info-ponto">
+                <h4>Multiplicador</h4>
+                <p>Embalando semana atrás de semana com 100% de aproveitamento sua pontuação muda. Segue o esquema.</p>
+                <br>
+                <ul>
+                    <li>1 Semana 100% = 2x de Multiplicador</li>
+                    <li>2 Semana 100% = 3x de Multiplicador</li>
+                    <li>3 Semana 100% = 4x de Multiplicador</li>
+                    <li>4 Semana 100% = 5x de Multiplicador</li>
+                </ul>
+                <br>
+                <p>O mês só possue 4 semanas, ao início de um novo mês todo mundo volta a escala 100%.
+                    <br><br>
+                    Obs:  Caso perca a sequência, os pontos continuaram do jeito que estão mas o multiplicador volta para 1x como todos e terá de ir atrás de aumentar 1 por 1 denovo.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="maneira">
+            <i class="fa fa-gamepad fa-2x"></i>
+            <div id="info-ponto">
+                <h4>Faça Reclamações</h4>
+                <p>Ao informar a um superior que você está com uma EPI faltando, ou não possui ou solicitando que uma nova EPI seja adicionada, caso seu pedido seja aceito receberá +100 pontos ao seu total. Lembrando que o responsavel da empresa irá ter uma conversa presencial com você para realmente chegar se vale ou não atender a demanda.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="maneira">
+            <i class="fa fa-gamepad fa-2x"></i>
+            <div id="info-ponto">
+                <h4>Tempo de Uso</h4>
+                <p>Quando mais tempo você estiver usando o app poderá ganhar pontos por isso. Aqui vai a lista:</p>
+                <br>
+                <ul>
+                    <li>10 minutos - +5 pontos</li>
+                    <li>15 minutos - +10 pontos</li>
+                    <li>20 minutos - +15 pontos</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
