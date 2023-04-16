@@ -27,35 +27,35 @@ function userAjuda() {
 /* Páginas de Equipamentos */
 
 function abreCapacete() {
-  window.open('https://epi-assure.netlify.app/equipamento/capacete', '_self');
+  window.open('https://epi-assure.netlify.app/equipamentos/capacete', '_self');
 }
 
 function abreBota() {
-  window.open('https://epi-assure.netlify.app/equipamento/botas', '_self');
+  window.open('https://epi-assure.netlify.app/equipamentos/botas', '_self');
 }
 
 function abreColete() {
-  window.open('https://epi-assure.netlify.app/equipamento/colete', '_self');
+  window.open('https://epi-assure.netlify.app/equipamentos/colete', '_self');
 }
 
 function abreLuva() {
-  window.open('https://epi-assure.netlify.app/equipamento/luva', '_self');
+  window.open('https://epi-assure.netlify.app/equipamentos/luva', '_self');
 }
 
 function abreFita() {
-  window.open('https://epi-assure.netlify.app/equipamento/fita', '_self');
+  window.open('https://epi-assure.netlify.app/equipamentos/fita', '_self');
 }
 
 function abreOculos() {
-  window.open('https://epi-assure.netlify.app/equipamento/oculos', '_self');
+  window.open('https://epi-assure.netlify.app/equipamentos/oculos', '_self');
 }
 
 function abreMascara() {
-  window.open('https://epi-assure.netlify.app/equipamento/mascara', '_self');
+  window.open('https://epi-assure.netlify.app/equipamentos/mascara', '_self');
 }
 
 function abreCone() {
-  window.open('https://epi-assure.netlify.app/equipamento/cone', '_self');
+  window.open('https://epi-assure.netlify.app/equipamentos/cone', '_self');
 }
 
 /* Rotas de Admnistrador */
@@ -112,6 +112,13 @@ function dicaUso() {
 
 /* Configurações de Perfil */
 
+function perfil() {
+   window.open('https://epi-assure.netlify.app/perfil/info-perfil', '_self');
+}
+
+function notifica() {
+   window.open('https://epi-assure.netlify.app/perfil/notificacao', '_self');
+}
 
 /* Contatos do Suporte */
 
