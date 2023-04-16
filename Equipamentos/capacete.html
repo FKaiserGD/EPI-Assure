@@ -8,15 +8,42 @@
     <meta name="description" content="Página de estudo mais detalhada, feita para dar a informação de como usar a EPI. (Capacete)">
     <meta name="theme-color" content="#FFDE59"/>
     <link rel="stylesheet" href="../Assets/css/style.css">
-    <link rel="stylesheet" href="../Assets/css/estudos-det.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180" type="image/x-icon">
-    <title>Pagina de Estudos Detalhada</title>
+    <title>Capacete</title>
+    <!-- CSS -->
+    <style>
+    main {
+        margin: 35% 0 15% 0;
+    }
+
+    main h3, p {
+        padding-top: 5%;
+        margin-left: 4%;
+    }
+
+    .desc-equip {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+
+    .desc-equip p{
+            width: 350px;
+    }
+
+    #icone-equip {
+        display: block;
+        margin: auto;
+        width: 180px;
+        height: 180px;
+    }
+    </style>
     <!-- Adicionando o DNS-prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <script src="../rotas.js"></script>
+    <script src="../js/rotas.js"></script>
 </head>
 <body>
     <header>
@@ -28,21 +55,18 @@
         <div class="desc-equip">
             <img src="../Assets/images/Icones/capacete.webp" alt="capacete" id="icone-equip">
             <h3>Descrição</h3>
-            <p>Um capacete de proteção é um equipamento de segurança que é usado na cabeça para proteger o usuário de lesões na cabeça
-            em caso de impacto ou queda.</p>
+            <p>Um capacete de proteção é um equipamento de segurança que é usado na cabeça para proteger o usuário de lesões na cabeça em caso de impacto ou queda.</p>
         </div>
         <div class="desc-equip">
             <h3>Como Utilizar</h3>
+            <p>Deve ser usado na cabeça, não basta só por como um chapéu, existe um lacre para que ele se mantenha em sua cabeça. É proibido o uso de gorros ou bonés por baixo do capacete, afinal, ele não foi projetado para ser usado assim. O boné ou
+            gorro diminui o poder de fixação da aranha do capacete na cabeça do empregado. E sempre com a aba virada para frente</p>
         </div>
-
-        <div class="desc-equip">
-            <h3>Como Não Utilizar</h3>
-        </div>   
     </main>    
     <footer>
         <ul>
             <li><i class="fa fa-home fa-2x" onclick="userHome()"></i></li>
-            <li><i class="fa fa-book fa-2x" style="color: #5A98FF;"></i></li>
+            <li><i class="fa fa-book fa-2x" onclick="userEstudo()" style="color: #5A98FF;"></i></li>
             <li><i class="fa fa-gamepad fa-2x" onclick="userGame()"></i></li>
             <li><i class="fa fa-cog fa-2x" onclick="userConfig()"></i></li>
         </ul>

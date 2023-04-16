@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Página de estudo mais detalhada, feita para dar a informação de como usar a EPI. (Máscara)">
+    <meta name="theme-color" content="#FFDE59" />
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
+        type="image/x-icon">
+    <title>Máscara</title>
+    <!-- CSS -->
+    <style>
+        main {
+            margin: 35% 0 15% 0;
+        }
+
+        main h3,
+        p {
+            padding-top: 5%;
+            margin-left: 4%;
+        }
+
+        .desc-equip {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .desc-equip p {
+            width: 350px;
+        }
+
+        ol {
+            margin: 5% 0 0 10%;
+        }
+
+        #icone-equip {
+            display: block;
+            margin: auto;
+            width: 180px;
+            height: 180px;
+        }
+    </style>
+    <!-- Adicionando o DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="../js/rotas.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
+        <h3>Nome do Usuário</h3>
+        <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer" onclick="userSolicitar()">
+    </header>
+    <main>
+        <div class="desc-equip">
+            <img src="../Assets/images/Icones/mascara-medica.webp" alt="botas" id="icone-equip">
+            <h3>Descrição</h3>
+            <p>As máscaras de proteção estão entre os Equipamentos de Proteção Individual (EPIs) mais importantes no que diz respeito à
+            preservação da saúde e bem-estar dos trabalhadores, e seu uso é indicado para os mais diversos tipos de segmento
+            profissional.
+            <br><br> 
+            Tratam-se de dispositivos que realizam a filtragem de partículas que são invisíveis a olho nu, mas podem
+            causar uma série de problemas ao aparelho respiratório — tais como gases, vapores orgânicos e fumo.
+            </p>
+        </div>
+        <div class="desc-equip">
+            <h3>Como Utilizar</h3>
+            <p>A primeira medida necessária para determinar se o uso da máscara EPI é necessário em determinado ambiente profissional
+            consiste em verificar a quantidade de oxigênio presente no ar. Se ele for inferior a 19,5% e superior a 23%, a máscara
+            pode ser necessária. Também é necessário verificar se a atmosfera é potencialmente nociva à saúde dos trabalhadores, o
+            que é feito por meio da identificação do tipo e quantidade de partículas contaminantes presentes no ar.
+            <br><br>
+            Vale ressaltar que uma atmosfera que não aparenta ser nociva à primeira vista também pode desencadear problemas
+            respiratórios. Por isso, estudar as características do ambiente é fundamental para proteger a saúde do trabalhador, além
+            de evitar problemas legais à empresa contratante.
+            <br><br>
+            Existe uma série de regras que podem ser consultadas para verificar se o uso da máscara de proteção é necessário. Caso
+            realmente seja, é preciso determinar o tipo deste EPI que é mais adequado aos trabalhadores que desempenham a atividade.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <ul>
+            <li><i class="fa fa-home fa-2x" onclick="userHome()"></i></li>
+            <li><i class="fa fa-book fa-2x" onclick="userEstudo()" style="color: #5A98FF;"></i></li>
+            <li><i class="fa fa-gamepad fa-2x" onclick="userGame()"></i></li>
+            <li><i class="fa fa-cog fa-2x" onclick="userConfig()"></i></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

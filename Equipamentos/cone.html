@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Página de estudo mais detalhada, feita para dar a informação de como usar a EPI. (Cone)">
+    <meta name="theme-color" content="#FFDE59" />
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
+        type="image/x-icon">
+    <title>Cone</title>
+    <!-- CSS -->
+    <style>
+        main {
+            margin: 35% 0 15% 0;
+        }
+
+        main h3,
+        p {
+            padding-top: 5%;
+            margin-left: 4%;
+        }
+
+        .desc-equip {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5%;
+        }
+
+        .desc-equip p{
+            width: 350px;
+        }
+
+        ol {
+            margin: 5% 0 0 10%;
+        }
+
+        #icone-equip {
+            display: block;
+            margin: auto;
+            width: 180px;
+            height: 180px;
+        }
+    </style>
+    <!-- Adicionando o DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="../js/rotas.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
+        <h3>Nome do Usuário</h3>
+        <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer" onclick="userSolicitar()">
+    </header>
+    <main>
+        <div class="desc-equip">
+            <img src="../Assets/images/Icones/cone.webp" alt="botas" id="icone-equip">
+            <h3>Descrição</h3>
+            <p>Cones de Sinalização são aqueles objetos cônicos que servem para demarcar situações em estradas, vias públicas ou
+            ambientes de trabalho que precisem ser limitados ou sinalizados. O objetivo principal é garantir a segurança daqueles
+            que passam pelo local ou que estão trabalhando naquele ambiente.</p>
+        </div>
+        <div class="desc-equip">
+            <h3>Tipos de cone</h3>
+            <p>A diferença mais importante que você irá encontrar dentre os Cones de Sinalização é a cor. Isso porque até existem cones
+            de diferentes tamanhos, mas o que irá importar mesmo na hora de escolher e determinar o local que ficará o produto, são
+            as cores.
+            </p>
+            <ol>
+                <li>Cones laranjas com as faixas brancas, prateadas ou refletivas, são utilizados para sinalizações móveis. Ou seja, para
+                sinalizar um perímetro que não seja fixo. Ou seja, para chamar atenção de alguma manutenção ou situação que esteja
+                acontecendo de maneira temporária.</li>
+                <li>Já os cones pretos com as faixas amarelas são mais utilizados para sinalizações fixas. Ou seja, para sinalizar locais ou
+                situações que não precisarão ser mudados ou que não sofrerão alteração nos próximos momentos.</li>
+            </ol>
+        </div>
+        <div class="desc-equip">
+            <h3>Como Utilizar</h3>
+            <p>Estes objetos tão comuns no nosso cotidiano possuem uma serventia enorme não só para a Segurança do Trabalho, como
+                para
+                a sociedade num geral.
+            <br><br>
+                Isso porque como você deve imaginar, eles servem para sinalizar caminhos e delimitar espaços que serão importantes
+                para
+                preservar a segurança física de todos. Seja de quem está passando pelo local ou de quem está trabalhando em um
+                ambiente
+                de risco.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <ul>
+            <li><i class="fa fa-home fa-2x" onclick="userHome()"></i></li>
+            <li><i class="fa fa-book fa-2x" onclick="userEstudo()" style="color: #5A98FF;"></i></li>
+            <li><i class="fa fa-gamepad fa-2x" onclick="userGame()"></i></li>
+            <li><i class="fa fa-cog fa-2x" onclick="userConfig()"></i></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

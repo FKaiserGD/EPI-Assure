@@ -8,16 +8,60 @@
     <meta name="description" content="Oferece dicas e ajuda para nosso usuário">
     <meta name="theme-color" content="#FFDE59" />
     <link rel="stylesheet" href="../Assets/css/style.css">
-    <link rel="stylesheet" href="../Assets/css/ajuda.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
         type="image/x-icon">
     <title>Ajuda</title>
+    <!-- CSS -->
+    <style>
+    main {
+    margin-top: 35%;
+    }
+    #titulo {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5%;
+    }
+
+    #titulo h2 {
+        margin-left: 10%;
+    }
+
+    #ajuda {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5%;
+        margin-left: 5%;
+    }
+
+    #volta {
+        width: 20px;
+        height: 20px;
+    }
+
+    #icone {
+        width: 42px;
+        height: 42px;
+    }
+
+    .opcoes {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10%;
+    }
+
+    .opcoes p {
+        font-size: 20px;
+        width: 250px;
+        margin-left: 5%;
+        padding-top: 1%;
+    }
+    </style>
     <!-- Adicionando o DNS-prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <script src="../rotas.js"></script>
+    <script src="../js/rotas.js"></script>
 </head>
 
 <body>
@@ -32,27 +76,27 @@
                 <i class="fa fa-arrow-left fa-2x" id="volta" onclick="volta()"></i>
                 <h2>Ajuda</h2>
             </div>
-            <div class="opcoes">
+            <div class="opcoes" onclick="infoUso()">
                 <i class="fa fa-bookmark fa-2x" id="icone"></i>
                 <p>Instruções de uso</p>
             </div>
-            <div class="opcoes">
+            <div class="opcoes" onclick="dicaUso()">
                 <i class="fa fa-lightbulb-o fa-2x" id="icone"></i>
                 <p>Dicas de uso</p>
             </div>
-            <div class="opcoes">
+            <div class="opcoes" onclick="duvidas()">
                 <i class="fa fa-question-circle-o  fa-2x" id="icone"></i>
                 <p>Dúvidas frequentes</p>
             </div>
-            <div class="opcoes">
+            <div class="opcoes" onclick="regulamenta()">
                 <i class="fa fa-balance-scale fa-2x" id="icone"></i>
                 <p>Regulamentações</p>
             </div>
-            <div class="opcoes">
+            <div class="opcoes" onclick="privacidade()">
                 <i class="fa fa-info-circle fa-2x" id="icone"></i>
                 <p>Política de privacidades</p>
             </div>
-            <div class="opcoes">
+            <div class="opcoes" onclick="contato()">
                 <i class="fa fa-phone fa-2x" id="icone"></i>
                 <p>Contato com Suporte</p>
             </div>

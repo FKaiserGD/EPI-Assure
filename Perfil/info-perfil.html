@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Página caso o usuário desejar mudar seu nome ou email de perfil">
+    <meta name="theme-color" content="#FFDE59" />
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
+        type="image/x-icon">
+    <title>Alterar Perfil</title>
+    <!-- CSS -->
+    <style>
+        header {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5%;
+        }
+
+        header h2 {
+            margin-left: 10%;
+            padding-top: 11%;
+        }
+
+        main {
+            margin: 35% 0 20% 5%; 
+        }
+
+        #volta {
+            width: 20px;
+            height: 20px;
+            padding-top: 10%;
+        }
+        
+        #info-usuario {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10%;
+        }
+
+        #icone-user {
+            display: block;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            border: 3px solid #FFDE59;
+        }
+
+        h4, h6 {
+            margin-top: 2%;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        #info-perfil {
+            display: block;
+            margin: auto;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 320px;
+        }
+
+        p, input {
+            margin: 5% 0 5% 0;
+            height: 3vh;
+            padding: 10px;
+            background-color: white;
+            color: #667085;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button {
+            margin: 5% 0 0 0;
+            height: 5vh;
+            padding: 10px;
+            background-color: #5A98FF;
+            color: white;
+            border-radius: 10px;
+            border: none;
+        }
+
+        input::placeholder {
+            color: #667085;
+        }
+
+    </style>
+    <!-- Adicionando o DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="../js/rotas.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.querySelector('button[type="submit"]');
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const nomeCompleto = document.querySelector('input[type="text"]').value;
+                const email = document.querySelector('input[type="email"]').value;
+
+                if (nomeCompleto.trim() !== '' && email.trim() !== '') {
+                    window.alert('Em breve o nome do usuário será redefinido!');
+                } else {
+                    window.alert('Por favor, preencha todos os campos.');
+                }
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <header>
+        <i class="fa fa-arrow-left fa-2x" id="volta" onclick="volta()"></i>
+        <h2>Perfil</h2>
+    </header>
+    <main>
+        <div id="info-usuario">
+            <img src="../Assets/images/Icones/usuario.webp" alt="" id="icone-user">
+            <h4>Nome do Usuário</h4>
+        </div>
+        <div id="info-perfil">
+            <form>
+                <p>Código do Usuário Já Preenchido</p>
+                <input type="text" placeholder="Nome Completo ou Social">
+                <p>Cargo Já Preenchido Pela Empresa</p>
+                <input type="email" placeholder="Email de Contato do Usuário" autocomplete="email">
+                <p>CPF Já Registrado Pela Empresa</p>
+                <button type="submit">Alterar Perfil</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

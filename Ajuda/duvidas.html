@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dúvidas frequentes que podem ter passado pela sua cabeça">
+    <meta name="theme-color" content="#FFDE59" />
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
+        type="image/x-icon">
+    <title>Dúvidas Frequentes</title>
+    <style>
+        header {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5%;
+        }
+
+        header h2 {
+            margin-left: 10%;
+            padding-top: 11%;
+        }
+
+        main {
+            margin: 35% 0 5% 0;
+        }
+
+        #volta {
+            width: 20px;
+            height: 20px;
+            padding-top: 10%;
+        }
+
+        .duvidas {
+            margin-top: 10%;
+        }
+
+        main .fa {
+            margin-left: 5%;
+            background-color: gray;
+        }
+
+        main h1 {
+            display: block;
+            margin: auto;
+            background-color: gray;
+            width: 350px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        main p {
+            display: block;
+            margin: auto;
+            background-color: rgb(199, 187, 187);
+            width: 300px;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+    <!-- Adicionando o DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="../js/rotas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.hide').hide(); // esconde todos os elementos com a classe 'hide'
+        });
+
+        function toggleInformacoes(el) {
+            $(el).find('#arrow-icon').toggleClass('rotate');
+            $(el).find('.hide').slideToggle();
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <i class="fa fa-arrow-left fa-2x" id="volta" onclick="volta()"></i>
+        <h2>Dicas de Uso</h2>
+    </header>
+    <main>
+        <div class="duvidas" onclick="toggleInformacoes(this)">
+            <h1>Sou dono/gerente de uma empresa que necessita de seus serviços, como funciona o processo?<i class="fa fa-angle-down" id="arrow-icon"></i></h1>
+            <div class="hide">
+                <p>Precisamos de uma relação dos funcionários e administradores da empresa com seus nomes completos, setor e cargo (só os
+                funcionários que usam no mínimo uma EPI no dia-a-dia) e iremos construir uma base de dados concedendo um código e uma
+                senha (geradas automaticamente) ao seu funcionário para entrar na plataforma.</p>
+            </div>
+        </div>
+        <div class="duvidas" onclick="toggleInformacoes(this)">
+            <h1>Sou administrador e utilizo EPI's e não posso ter pontuação?<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>O administrador possui impacto importante na pontuação dos usuários já que o fato do administrador pode aprovar um
+                pedido de solicitação de um funcionário aumentará a pontuação do usuário. Sendo assim, seria uma brecha para que a
+                pessoa na conta de administrador tentasse manipular a pontuação a seu favor para interesses próprios.</p>
+            </div>
+        </div>
+        <div class="duvidas" onclick="toggleInformacoes(this)">
+            <h1>Como ganho mais pontos?<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Na página de pontuação existe um texto que te levará a uma página de como ganhar mais pontuação fora dos check-up's
+                diário.</p>
+            </div>
+        </div>
+        <div class="duvidas" onclick="toggleInformacoes(this)">
+            <h1>Para onde vão os dados que presto todo dia?<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Para nosso banco de dados que conecta você ao seu responsável pelas EPI's na empresa o quão trabalham portanto todas as reclamações, pedidos, fotos e confirmações vão até ele.</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

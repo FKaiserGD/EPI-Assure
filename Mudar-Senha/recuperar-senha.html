@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Segunda etapa da recuperação de senha: Confirmar o código enviado por email">
+        content="Recupere a sua senha caso tenha se esquecido ou perdido, para continuar usando nossa aplicação.">
     <meta name="theme-color" content="#FFDE59" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="./Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180"
         type="image/x-icon">
-    <title>Confirmar Senha</title>
+    <title>Recuperar Senha</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -73,7 +72,7 @@
             margin-bottom: 3%;
         }
 
-        form>input {
+        form > input {
             background-color: white;
             width: 300px;
             height: 55px;
@@ -124,13 +123,14 @@
     </header>
     <main>
         <div id="texto">
-            <h3>Recuperar dados</h3>
-            <h4>Por favor, nos informe o código enviado ao email</h4>
-            <h6>É apenas uma maneira de garantir sua segurança!</h6>
+            <h3>Recuperar/Mudar dados</h3>
+            <h4>Por favor, preencha os dados abaixo</h4>
+            <h6>Você receberá um email de confirmação!</h6>
         </div>
         <form>
-            <input type="text" placeholder="Código de segurança">
-            <button><a href="https://epi-assure.netlify.app/confirmado">Enviar Código</a>
+            <input type="text" placeholder="Nome Completo" autocomplete="additional-name">
+            <input type="text" placeholder="Email Corporativo" autocomplete="email">
+            <button><a href="https://epi-assure.netlify.app/mudar-senha/confirmar-email">Enviar Código</a>
         </form>
     </main>
 </body>
