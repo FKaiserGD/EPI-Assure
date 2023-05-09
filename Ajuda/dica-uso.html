@@ -26,7 +26,7 @@
         }
 
         main {
-            margin: 35% 0 0 5%;
+            margin: 35% 0 5% 0;
         }
 
         #volta {
@@ -35,19 +35,54 @@
             padding-top: 10%;
         }
 
-        ol {
-            margin-left: 5%;
+        .dica-uso {
+            margin-top: 10%;
         }
 
-        li {
-            width: 310px;
-            margin-bottom: 4%;
+        main .fa {
+            margin-left: 5%;
+            background-color: #c5c5c5;
+        }
+
+        main h1 {
+            display: block;
+            margin: auto;
+            background-color: #c5c5c5;
+            width: 350px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        main p {
+            display: block;
+            margin: auto;
+            color: white;
+            background-color: #5e5d5d;
+            width: 300px;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
         }
     </style>
     <!-- Adicionando o DNS-prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/rotas.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.hide').hide(); // esconde todos os elementos com a classe 'hide'
+        });
+
+        function toggleInformacoes(el) {
+            $(el).find('#arrow-icon').toggleClass('rotate');
+            $(el).find('.hide').slideToggle();
+        }
+    </script>
 </head>
 
 <body>
@@ -56,25 +91,61 @@
         <h2>Dicas de Uso</h2>
     </header>
     <main>
-        <ol>
-            <li>É recomendável que no primeiro acesso ao site, você aceite baixar a aplicação em seu dispositivo móvel. Caso perca a
-            chance: Clique dos 3 pontinhos do navegador e a opção de "Instalar Aplicativo" estará lá. (Fazer na página inicial)</li>
-            <li>Se houver problema com a senha, clique no texto "Esqueceu a senha ou o código?" e lá confirmará suas informações para
-            podermos confirmar sua identidade e lhe permite criar outra senha para login. Também é possível mudar há qualquer
-            momento.</li>
-            <li>Sempre preencha no mínimo 2 EPI's que estão sendo utilizadas, aceite o termo de resposabilidade e tire uma fota ou seus dados não serão salvos. Caso não tenha EPI's para cumprir o requisito talvez seja bom enviar uma mensagem ao seu administrador no ícone ao lado de seu nome de usuario na parte superior do app.</li>
-            <li>Caso seja administrador e não se utiliza de EPI's apenas clique em "Não faço uso de equipamentos" e clique em "Confirmar" para enviar os dados</li>
-            <li>Caso um gerente julgue a foto comprobatória não foi satisfatória para análise, tente usar outro ângulo de câmera
-            clicando mais de uma vez no botão amarelo para adicionar foto, a câmera muda.</li>
-            <li>Se você chegou aqui foi porque acessou a página de configurações e ficou a aba de "Ajuda", saiba que junto a mim também
-            existem várias outras páginas detalhando informações que podem ser úteis a você.</li>
-            <li>Sempre é bom mudar a senha que lhe foi dada pelo seu gerente, nunca se sabe se a mesma pode cair na mão de
-            desconhecidos, mude a senha o mais rápido possível para uma de sua escolha.</li>
-            <li>Sempre que tiver dúvida sobre como funciona uma EPI. Vá até a página de estudos e clique na EPI que você deseja ser
-            informado sobre o funcionamento.</li>
-            <li>Caso queira trocar sua foto de perfil e colocar seu nome social, sinta-se à vontade, só tome cuidado para não tornar sua
-            identificação difícil para o administrador.</li>
-        </ol>
+        <div class="dica-uso" onclick="toggleInformacoes(this)">
+            <h1>Dica 1<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>É recomendável que no primeiro acesso ao site, você aceite baixar a aplicação em seu dispositivo móvel. Caso perca a chance: Clique dos 3 pontinhos do navegador e a opção de "Instalar Aplicativo" estará lá. (Fazer na página inicial)</p>
+            </div>
+        </div>
+        <div class="dica-uso" onclick="toggleInformacoes(this)">
+            <h1>Dica 2<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Se houver problema com a senha, clique no texto "Esqueceu a senha ou o código?" e lá confirmará suas informações para
+                    podermos confirmar sua identidade e lhe permite criar outra senha para login. Também é possível mudar há qualquer
+                    momento.</p>
+            </div>
+        </div>
+        <div class="dica-uso" onclick="toggleInformacoes(this)">
+            <h1>Dica 3<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Sempre preencha no mínimo 2 EPI's que estão sendo utilizadas, aceite o termo de resposabilidade e tire uma fota ou seus dados não serão salvos. Caso não tenha EPI's para cumprir o requisito talvez seja bom enviar uma mensagem ao seu administrador no ícone ao lado de seu nome de usuario na parte superior do app.</p>
+            </div>
+        </div>
+        <div class="dica-uso" onclick="toggleInformacoes(this)">
+            <h1>Dica 4<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Caso seja administrador e não se utiliza de EPI's apenas clique em "Não faço uso de equipamentos" e clique em "Confirmar" para enviar os dados</p>
+            </div>
+        </div>
+        <div class="dica-uso" onclick="toggleInformacoes(this)">
+            <h1>Dica 5<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Se você chegou aqui foi porque acessou a página de configurações e ficou a aba de "Ajuda", saiba que junto a mim também
+                    existem várias outras páginas detalhando informações que podem ser úteis a você.</p>
+            </div>
+        </div>
+        <div class="dica-uso" onclick="toggleInformacoes(this)">
+            <h1>Dica 6<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Sempre é bom mudar a senha que lhe foi dada pelo seu gerente, nunca se sabe se a mesma pode cair na mão de
+                    desconhecidos, mude a senha o mais rápido possível para uma de sua escolha.</p>
+            </div>
+        </div>
+        <div class="dica-uso" onclick="toggleInformacoes(this)">
+            <h1>Dica 7<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Sempre que tiver dúvida sobre como funciona uma EPI. Vá até a página de estudos e clique na EPI que você deseja ser
+                    informado sobre o funcionamento.</p>
+            </div>
+        </div>
+        <div class="dica-uso" onclick="toggleInformacoes(this)">
+            <h1>Dica 8<i class="fa fa-angle-down"></i></h1>
+            <div class="hide">
+                <p>Caso queira trocar sua foto de perfil e colocar seu nome social, sinta-se à vontade, só tome cuidado para não tornar sua
+                    identificação difícil para o administrador.</p>                
+            </div>
+        </div>
+        
     </main>
 </body>
 
