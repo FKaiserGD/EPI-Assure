@@ -16,6 +16,36 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <script src="../js/rotas.js"></script>
+    <script>
+      const dropdowns = document.querySelectorAll('.dropdown');
+
+      dropdowns.forEach(dropdown => {
+        const select = dropdown.querySelector('.select');
+        const caret = dropdown.querySelector('.caret');
+        const menu = dropdown.querySelector('.menu');
+        const options = dropdown.querySelector('.menu li');
+
+        select.addEventListener ('click', () => {
+          select.classList.toggle('select-clicked');
+          caret.classList.toggle('caret-rotate');
+          menu.classList.toggle('menu-open');
+        });
+
+        options.forEach(option => {
+          option.addEventListener('click', () => {
+            selected.innerText = option.innerText;
+            select.classList.remove('select-clicked');
+            caret.classList.remove('caret-rotate');
+            menu.classList.remove('menu-open');
+
+            options.forEach(option => {
+              option.classList.remove('active')
+            });
+          option.classList.add('active')
+          });
+        });
+      });
+    </script>
 </head>
 <body>
   <header>
@@ -24,16 +54,16 @@
     <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer" onclick="userSolicitar()">
   </header>
   <main>
-    <div class="container">
-      <div class="tabs">
-        <input type="radio" id="radio-1" name="tabs" checked />
-        <label class="tab" for="radio-1">Equipamentos</label>
-        <input type="radio" id="radio-2" name="tabs" />
-        <label class="tab" for="radio-2">Setor</label>
-        <input type="radio" id="radio-3" name="tabs" />
-        <label class="tab" for="radio-3"> Cargo</label>
-        <span class="glider"></span>
+    <div class="dropdown">
+      <div class="select">
+        <span class="selected">Equipamentos</span>
+        <div class="caret"></div>
       </div>
+      <ul class="menu">
+        <li>Setor</li>
+        <li>Cargo</li>
+        <li class="active">Equipamentos</li>
+      </ul>
     </div>
     <div id="check-equip">
       <div class="equipamento"  onclick="abreCapacete();">
