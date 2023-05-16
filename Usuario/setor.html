@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubra mais sobre essas EPI's tão importantes no dia-a-dia. Só para usuários">
+    <meta name="description" content="Descubra mais sobre os setores da empresa e sobre cada cargo dentro dele">
     <meta name="theme-color" content="#FFDE59"/>
     <link rel="stylesheet" href="../Assets/css/style.css">
     <link rel="stylesheet" href= "../Assets/css/estudos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../Assets/images/AppIcons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../Assets/images/AppIcons/apple-touch-icon.png" sizes="180x180" type="image/x-icon">
-    <title>Equipamentos</title>
+    <title>Setores</title>
     <!-- Adicionando o DNS-prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -34,8 +34,8 @@
       function redirectToPage(value) {
         if (value === "cargo") {
           window.open('https://epi-assure.netlify.app/usuario/cargo', '_self');
-        } else if (value === "setor") {
-          window.open('https://epi-assure.netlify.app/usuario/setor', '_self');
+        } else if (value === "equipamento") {
+          window.open('https://epi-assure.netlify.app/usuario/estudos', '_self');
         }
       }
     </script>
@@ -49,9 +49,9 @@
   <main>
     <div id="filtro">
       <select onchange="redirectToPage(this.value)">
-        <option value="equipamento" selected>Equipamento</option>
+        <option value="equipamento">Equipamento</option>
         <option value="cargo">Cargo</option>
-        <option value="setor">Setor</option>
+        <option value="setor" selected>Setor</option>
       </select>
     </div>    
     <div id="check-equip">
@@ -124,22 +124,22 @@
   </main> 
   <footer>
     <ul>
-      <div class="icone">
-        <li><i class="fa fa-home fa-2x" onclick="userHome()"></i></li>
-        <li class="nome-icone">Home</li>
-      </div>
-      <div class="icone">
-        <li><i class="fa fa-book fa-2x" style="color: #5A98FF;"></i></li>
-        <li class="nome-icone">Estudos</li>
-      </div>
-      <div class="icone">
-        <li><i class="fa fa-gamepad fa-2x" onclick="userGame()"></i></li>
-        <li class="nome-icone">Rank</li>
-      </div>
-      <div class="icone">
-        <li><i class="fa fa-cog fa-2x" onclick="userConfig()"></i></li>
-        <li class="nome-icone">Config.</li>
-      </div>
+        <div class="icone">
+            <li><i class="fa fa-home fa-2x" onclick="userHome()"></i></li>
+            <li class="nome-icone">Home</li>
+        </div>
+        <div class="icone">
+            <li><i class="fa fa-book fa-2x" onclick="userEstudo()" style="color: #5A98FF;"></i></li>
+            <li class="nome-icone">Estudos</li>
+        </div>
+        <div class="icone">
+            <li><i class="fa fa-gamepad fa-2x" onclick="userGame()"></i></li>
+            <li class="nome-icone">Rank</li>
+        </div>
+        <div class="icone">
+            <li><i class="fa fa-cog fa-2x" onclick="userConfig()"></i></li>
+            <li class="nome-icone">Config.</li>
+        </div>
     </ul>
   </footer>
 </body>

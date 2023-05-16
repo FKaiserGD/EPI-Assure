@@ -8,7 +8,7 @@ main h3 {
 }
 
 #check-equip {
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: 5%;
 }
 
@@ -43,110 +43,22 @@ hr {
   margin-bottom: 3%;
 }
 
-.container {
+#filtro {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.tabs {
-  display: flex;
-  position: relative;
-  background-color: #fff;
-  box-shadow: 0 0 1px 0 rgb(113, 115, 119), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
-  padding: 0.75rem;
-  border-radius: 99px;
+select {
+  width: 350px;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5%;
 }
 
-.dropdown {
-  min-width: 15rem;
-  position: relative;
-  margin: 2em;
-}
-
-.dropdown * {
-  box-sizing: border-box;
-}
-
-.select {
-  background-color: #2a2f3b;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px #2a2f3b solid;
-  border-radius: 0.5em;
-  padding: 1em;
-  cursor: pointer;
-}
-
-select-clicked {
-  border: 2px #26489a solid;
-  box-shadow: 0 0 0.8em #26489a;
-}
-
-.select:hover {
-  background: #323741;
-}
-
-.selected {
-  background-color: #2a2f3b;
-}
-
-.caret {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid #fff;
-  transition: 0.3s;
-}
-
-.caret-rotate {
-  transform: rotate(180deg);
-}
-
-.menu {
-  list-style: none;
-  padding: 0.2em 0.5em;
-  background: #323741;
-  border: 1px #353a43 solid;
-  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
-  border-radius: 0.5em;
-  color: #9fa5b5;
-  position: absolute;
-  top: 3em;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%);
-  opacity: 0;
-  display: none;
-  transition: 0.2s;
-  z-index: 1;
-}
-
-.menu li {
-  padding: 0.7em 0.5em;
-  margin: 0.3em 0;
-  border-radius: 0.5em;
-  cursor: pointer;
-}
-
-.menu li:hover {
-  background: #2a2d35;
-}
-
-.active {
-  background: #23242a;
-}
-
-.menu-open {
-  display: block;
-  opacity: 1;
-}
-
-@media (max-width: 700px) {
-  .tabs {
-    transform: scale(0.6);
-  }
+option {
+  width: 150px;
 }
