@@ -26,7 +26,40 @@ hr {
     justify-content: center;
     margin-bottom: 10%;
 }
+
+#pesquisa {
+    margin-left: 5%;
+  }
   
+  .input-wrapper {
+    position: relative;
+  }
+  
+  .input-wrapper input[type="text"] {
+    width: 350px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid black;
+  }
+  
+  .icon-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+  }
+  
+  .icon-wrapper i {
+    display: inline-block;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+    margin-left: 5px;
+  }    
+
 select {
     width: 350px;
     height: 30px;
@@ -35,6 +68,7 @@ select {
     font-size: 16px;
     font-weight: bold;
     margin-top: 5%;
+    border: 1px solid black;
 }
 
 #lista {
@@ -72,10 +106,4 @@ h4 {
 
 p {
     font-size: 14px;
-}
-
-@media (max-width: 700px) {
-    .tabs {
-        transform: scale(0.6);
-    }
 }

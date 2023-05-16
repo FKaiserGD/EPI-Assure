@@ -19,25 +19,91 @@
     <script src="../js/rotas.js"></script>
     <script>
         const selectElement = document.getElementById('selectFiltro');
-  
+
         const selectedValue = localStorage.getItem('selectedValue');
-  
+
         if (selectedValue) {
-          selectElement.value = selectedValue;
+        selectElement.value = selectedValue;
         }
-  
+
         selectElement.addEventListener('change', function() {
-          const selectedOption = selectElement.value;
-          localStorage.setItem('selectedValue', selectedOption);
-          redirectToPage(selectedOption);
+        const selectedOption = selectElement.value;
+        localStorage.setItem('selectedValue', selectedOption);
+        redirectToPage(selectedOption);
         });
-  
+
         function redirectToPage(value) {
-          if (value === "crescente") {
-            window.open('https://epi-assure.netlify.app/administrador/game', '_self');
-          }
+        const listaFuncionarios = document.getElementById('lista');
+        const funcionarios = Array.from(listaFuncionarios.getElementsByClassName('funcionario'));
+
+        if (value === 'crescente') {
+            funcionarios.sort(function(a, b) {
+            const pontosA = parseInt(a.querySelector('.pontos p').textContent);
+            const pontosB = parseInt(b.querySelector('.pontos p').textContent);
+            return pontosA - pontosB;
+            });
+        } else if (value === 'decrescente') {
+            funcionarios.sort(function(a, b) {
+            const pontosA = parseInt(a.querySelector('.pontos p').textContent);
+            const pontosB = parseInt(b.querySelector('.pontos p').textContent);
+            return pontosB - pontosA;
+            });
         }
-      </script>
+
+        listaFuncionarios.innerHTML = '';
+        funcionarios.forEach(function(funcionario) {
+            listaFuncionarios.appendChild(funcionario);
+            listaFuncionarios.appendChild(document.createElement('hr'));
+        });
+        }
+
+        let listaInicialFuncionarios = null;
+
+        function init() {
+        listaInicialFuncionarios = document.getElementById('lista').innerHTML;
+        }
+
+        function filtrarFuncionarios() {
+        const inputPesquisa = document.getElementById('pesquisa').querySelector('input');
+        const valorPesquisa = inputPesquisa.value.toLowerCase();
+
+        const listaFuncionarios = document.getElementById('lista');
+        const funcionarios = Array.from(listaFuncionarios.getElementsByClassName('funcionario'));
+
+        // Se o campo de pesquisa estiver vazio, redefine a lista de funcionários para a lista inicial
+        if (valorPesquisa === '') {
+            listaFuncionarios.innerHTML = listaInicialFuncionarios;
+        } else {
+            // Filtrar os funcionários com base na pesquisa
+            const funcionariosFiltrados = funcionarios.filter(function(funcionario) {
+            const nomeFuncionario = funcionario.querySelector('.info-funcionario h4').textContent.toLowerCase();
+            return nomeFuncionario.includes(valorPesquisa);
+            });
+
+            // Limpar a lista de funcionários existente
+            listaFuncionarios.innerHTML = '';
+
+            // Adicionar os funcionários filtrados de volta à lista
+            funcionariosFiltrados.forEach(function(funcionario) {
+            listaFuncionarios.appendChild(funcionario);
+            listaFuncionarios.appendChild(document.createElement('hr'));
+            });
+        }
+        }
+
+        function limparFiltro() {
+        const inputPesquisa = document.getElementById('pesquisa').querySelector('input');
+        inputPesquisa.value = '';
+
+        // Redefinir a lista de funcionários para a lista inicial
+        const listaFuncionarios = document.getElementById('lista');
+        listaFuncionarios.innerHTML = listaInicialFuncionarios;
+        }
+
+        document.getElementById('pesquisa').querySelector('i.fa-search').addEventListener('click', filtrarFuncionarios);
+        document.getElementById('pesquisa').querySelector
+    </script>
+    
 </head>
 
 <body>
@@ -51,7 +117,15 @@
             <h2>Ranking do Mês</h2>
             <img src="../Assets/images/Icones/trofeu.webp" alt="icone-trofeu" id="icone-trofeu">
         </div>
-
+        <div id="pesquisa">
+            <div class="input-wrapper">
+              <input type="text" placeholder="Pesquise um Funcionário">
+              <div class="icon-wrapper">
+                <i class="fa fa-search" onclick="filtrarFuncionarios()"></i>
+                <i class="fa fa-refresh" onclick="limparFiltro()"></i>
+              </div>
+            </div>
+        </div>                 
         <div id="filtro">
             <select onchange="redirectToPage(this.value)">
               <option value="decrescente" selected>Ordem Decrescente</option>
@@ -63,7 +137,7 @@
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Nome do Funcionário</h4>
+                        <h4>Carlos</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
@@ -77,7 +151,7 @@
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Nome do Funcionário</h4>
+                        <h4>Ronaldo</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
