@@ -17,6 +17,27 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <script src="../js/rotas.js"></script>
+    <script>
+        const selectElement = document.getElementById('selectFiltro');
+  
+        const selectedValue = localStorage.getItem('selectedValue');
+  
+        if (selectedValue) {
+          selectElement.value = selectedValue;
+        }
+  
+        selectElement.addEventListener('change', function() {
+          const selectedOption = selectElement.value;
+          localStorage.setItem('selectedValue', selectedOption);
+          redirectToPage(selectedOption);
+        });
+  
+        function redirectToPage(value) {
+          if (value === "add-funcionario") {
+            window.open('https://epi-assure.netlify.app/administrador/add-funcionario', '_self');
+          }
+        }
+      </script>
 </head>
 <body>
     <header>
@@ -25,14 +46,11 @@
         <img src="../Assets/images/Icones/helmet.webp" alt="adicionar EPI" id="icone-requer" onclick="admSolicitar()">
     </header>
     <main>
-        <div class="container">
-            <div class="tabs">
-                <input type="radio" id="radio-1" name="tabs" checked />
-                <label class="tab" for="radio-1">Equipamentos</label>
-                <input type="radio" id="radio-2" name="tabs" />
-                <label class="tab" for="radio-2">Funcionários</label>
-                <span class="glider"></span>
-            </div>
+        <div id="filtro">
+            <select onchange="redirectToPage(this.value)">
+              <option value="add-equipamento" selected>Equipamento</option>
+              <option value="add-funcionario">Funcionário</option>
+            </select>
         </div>
         <h3>Adicionar Nova EPI</h3>
         <div class="imagem">

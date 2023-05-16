@@ -17,6 +17,27 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <script src="../js/rotas.js"></script>
+    <script>
+        const selectElement = document.getElementById('selectFiltro');
+  
+        const selectedValue = localStorage.getItem('selectedValue');
+  
+        if (selectedValue) {
+          selectElement.value = selectedValue;
+        }
+  
+        selectElement.addEventListener('change', function() {
+          const selectedOption = selectElement.value;
+          localStorage.setItem('selectedValue', selectedOption);
+          redirectToPage(selectedOption);
+        });
+  
+        function redirectToPage(value) {
+          if (value === "crescente") {
+            window.open('https://epi-assure.netlify.app/administrador/game', '_self');
+          }
+        }
+      </script>
 </head>
 
 <body>
@@ -30,14 +51,12 @@
             <h2>Ranking do Mês</h2>
             <img src="../Assets/images/Icones/trofeu.webp" alt="icone-trofeu" id="icone-trofeu">
         </div>
-        <div class="container">
-            <div class="tabs">
-                <input type="radio" id="radio-1" name="tabs" checked />
-                <label class="tab" for="radio-1">Colaboradores</label>
-                <input type="radio" id="radio-2" name="tabs" />
-                <label class="tab" for="radio-2">Gestores</label>
-                <span class="glider"></span>
-            </div>
+
+        <div id="filtro">
+            <select onchange="redirectToPage(this.value)">
+              <option value="decrescente" selected>Ordem Decrescente</option>
+              <option value="crescente">Ordem Crescente</option>
+            </select>
         </div>
         <div id="lista">
             <div class="funcionario">
@@ -49,7 +68,7 @@
                     </div>
                     <div class="pontos">
                         <i class="fa fa-trophy fa-2x"></i>
-                        <p>32 Pts</p>
+                        <p>1000 Pts</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +82,7 @@
                     </div>
                     <div class="pontos">
                         <i class="fa fa-trophy fa-2x"></i>
-                        <p>32 Pts</p>
+                        <p>800 Pts</p>
                     </div>
                 </div>
             </div>
@@ -77,7 +96,7 @@
                     </div>
                     <div class="pontos">
                         <i class="fa fa-trophy fa-2x"></i>
-                        <p>32 Pts</p>
+                        <p>600 Pts</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +110,7 @@
                     </div>
                     <div class="pontos">
                         <i class="fa fa-trophy fa-2x"></i>
-                        <p>32 Pts</p>
+                        <p>400 Pts</p>
                     </div>
                 </div>
             </div>
@@ -105,7 +124,7 @@
                     </div>
                     <div class="pontos">
                         <i class="fa fa-trophy fa-2x"></i>
-                        <p>32 Pts</p>
+                        <p>200 Pts</p>
                     </div>
                 </div>
             </div>
@@ -119,7 +138,7 @@
                     </div>
                     <div class="pontos">
                         <i class="fa fa-trophy fa-2x"></i>
-                        <p>32 Pts</p>
+                        <p>100 Pts</p>
                     </div>
                 </div>
             </div>
@@ -133,7 +152,7 @@
                     </div>
                     <div class="pontos">
                         <i class="fa fa-trophy fa-2x"></i>
-                        <p>32 Pts</p>
+                        <p>50 Pts</p>
                     </div>
                 </div>
             </div>
