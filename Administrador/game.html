@@ -18,91 +18,64 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <script src="../js/rotas.js"></script>
     <script>
-        const selectElement = document.getElementById('selectFiltro');
-
-        const selectedValue = localStorage.getItem('selectedValue');
-
-        if (selectedValue) {
-        selectElement.value = selectedValue;
-        }
-
-        selectElement.addEventListener('change', function() {
-        const selectedOption = selectElement.value;
-        localStorage.setItem('selectedValue', selectedOption);
-        redirectToPage(selectedOption);
-        });
-
-        function redirectToPage(value) {
-        const listaFuncionarios = document.getElementById('lista');
-        const funcionarios = Array.from(listaFuncionarios.getElementsByClassName('funcionario'));
-
-        if (value === 'crescente') {
-            funcionarios.sort(function(a, b) {
-            const pontosA = parseInt(a.querySelector('.pontos p').textContent);
-            const pontosB = parseInt(b.querySelector('.pontos p').textContent);
-            return pontosA - pontosB;
+        window.addEventListener('DOMContentLoaded', () => {
+          const listaFuncionarios = document.getElementById('lista');
+          const funcionarios = Array.from(listaFuncionarios.getElementsByClassName('funcionario'));
+    
+          const inputPesquisa = document.querySelector('#barra-pesquisa input');
+          const selectOrdenacao = document.getElementById('filtro').querySelector('select');
+    
+          let funcionariosFiltrados = [...funcionarios];
+    
+          const filtrarFuncionarios = () => {
+            const valorPesquisa = inputPesquisa.value.toLowerCase();
+    
+            funcionariosFiltrados = funcionarios.filter(funcionario => {
+              const nomeFuncionario = funcionario.querySelector('.info-funcionario h4').textContent.toLowerCase();
+              return nomeFuncionario.includes(valorPesquisa);
             });
-        } else if (value === 'decrescente') {
-            funcionarios.sort(function(a, b) {
-            const pontosA = parseInt(a.querySelector('.pontos p').textContent);
-            const pontosB = parseInt(b.querySelector('.pontos p').textContent);
-            return pontosB - pontosA;
+    
+            ordenarFuncionarios();
+          };
+    
+          const limparFiltro = () => {
+            inputPesquisa.value = '';
+            funcionariosFiltrados = [...funcionarios];
+            ordenarFuncionarios();
+          };
+    
+          const ordenarFuncionarios = () => {
+            const valorOrdenacao = selectOrdenacao.value;
+    
+            funcionariosFiltrados.sort((a, b) => {
+              const pontosA = parseInt(a.querySelector('.pontos p').textContent);
+              const pontosB = parseInt(b.querySelector('.pontos p').textContent);
+    
+              if (valorOrdenacao === 'crescente') {
+                return pontosA - pontosB;
+              } else {
+                return pontosB - pontosA;
+              }
             });
-        }
-
-        listaFuncionarios.innerHTML = '';
-        funcionarios.forEach(function(funcionario) {
-            listaFuncionarios.appendChild(funcionario);
-            listaFuncionarios.appendChild(document.createElement('hr'));
-        });
-        }
-
-        let listaInicialFuncionarios = null;
-
-        function init() {
-        listaInicialFuncionarios = document.getElementById('lista').innerHTML;
-        }
-
-        function filtrarFuncionarios() {
-        const inputPesquisa = document.getElementById('pesquisa').querySelector('input');
-        const valorPesquisa = inputPesquisa.value.toLowerCase();
-
-        const listaFuncionarios = document.getElementById('lista');
-        const funcionarios = Array.from(listaFuncionarios.getElementsByClassName('funcionario'));
-
-        // Se o campo de pesquisa estiver vazio, redefine a lista de funcionários para a lista inicial
-        if (valorPesquisa === '') {
-            listaFuncionarios.innerHTML = listaInicialFuncionarios;
-        } else {
-            // Filtrar os funcionários com base na pesquisa
-            const funcionariosFiltrados = funcionarios.filter(function(funcionario) {
-            const nomeFuncionario = funcionario.querySelector('.info-funcionario h4').textContent.toLowerCase();
-            return nomeFuncionario.includes(valorPesquisa);
-            });
-
-            // Limpar a lista de funcionários existente
+    
+            atualizarListaFuncionarios();
+          };
+    
+          const atualizarListaFuncionarios = () => {
             listaFuncionarios.innerHTML = '';
-
-            // Adicionar os funcionários filtrados de volta à lista
-            funcionariosFiltrados.forEach(function(funcionario) {
-            listaFuncionarios.appendChild(funcionario);
-            listaFuncionarios.appendChild(document.createElement('hr'));
+    
+            funcionariosFiltrados.forEach(funcionario => {
+              listaFuncionarios.appendChild(funcionario.cloneNode(true));
+              listaFuncionarios.appendChild(document.createElement('hr'));
             });
-        }
-        }
-
-        function limparFiltro() {
-        const inputPesquisa = document.getElementById('pesquisa').querySelector('input');
-        inputPesquisa.value = '';
-
-        // Redefinir a lista de funcionários para a lista inicial
-        const listaFuncionarios = document.getElementById('lista');
-        listaFuncionarios.innerHTML = listaInicialFuncionarios;
-        }
-
-        document.getElementById('pesquisa').querySelector('i.fa-search').addEventListener('click', filtrarFuncionarios);
-        document.getElementById('pesquisa').querySelector
-    </script>
+          };
+    
+          inputPesquisa.addEventListener('input', filtrarFuncionarios);
+          selectOrdenacao.addEventListener('change', ordenarFuncionarios);
+    
+          filtrarFuncionarios();
+        });
+      </script>
     
 </head>
 
@@ -118,26 +91,27 @@
             <img src="../Assets/images/Icones/trofeu.webp" alt="icone-trofeu" id="icone-trofeu">
         </div>
         <div id="pesquisa">
-            <div class="input-wrapper">
-              <input type="text" placeholder="Pesquise um Funcionário">
-              <div class="icon-wrapper">
-                <i class="fa fa-search" onclick="filtrarFuncionarios()"></i>
-                <i class="fa fa-refresh" onclick="limparFiltro()"></i>
-              </div>
+            <div id="barra-pesquisa">
+                <div class="input-wrapper">
+                  <input type="text" placeholder="Pesquise um Funcionário">
+                  <div class="icon-wrapper">
+                    <i class="fa fa-search" onclick="filtrarFuncionarios()"></i>
+                  </div>
+                </div>
+            </div>                 
+            <div id="filtro">
+                <select onchange="redirectToPage(this.value)">
+                  <option value="decrescente" selected>Ordem Decrescente</option>
+                  <option value="crescente">Ordem Crescente</option>
+                </select>
             </div>
-        </div>                 
-        <div id="filtro">
-            <select onchange="redirectToPage(this.value)">
-              <option value="decrescente" selected>Ordem Decrescente</option>
-              <option value="crescente">Ordem Crescente</option>
-            </select>
         </div>
         <div id="lista">
             <div class="funcionario">
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Carlos</h4>
+                        <h4>João Silva</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
@@ -151,7 +125,7 @@
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Ronaldo</h4>
+                        <h4>João Santos</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
@@ -165,7 +139,7 @@
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Nome do Funcionário</h4>
+                        <h4>Pedro Costa</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
@@ -179,7 +153,7 @@
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Nome do Funcionário</h4>
+                        <h4>Ana Oliveira</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
@@ -193,7 +167,7 @@
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Nome do Funcionário</h4>
+                        <h4>Carlos Almeida</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
@@ -207,7 +181,7 @@
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Nome do Funcionário</h4>
+                        <h4>Beatriz Rodrigues</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
@@ -221,7 +195,7 @@
                 <img src="../Assets/images/Icones/usuario.webp" alt="imagem do usuário" id="imagem-user">
                 <div class="info-funcionario">
                     <div class="pontos-funcionario">
-                        <h4>Nome do Funcionário</h4>
+                        <h4>Guilherme Souza</h4>
                         <p>Cargo</p>
                     </div>
                     <div class="pontos">
