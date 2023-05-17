@@ -18,26 +18,38 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <script src="../js/rotas.js"></script>
     <script>
-        const selectElement = document.getElementById('selectFiltro');
-  
-        const selectedValue = localStorage.getItem('selectedValue');
-  
-        if (selectedValue) {
-          selectElement.value = selectedValue;
+        function changeFields(value) {
+            const tituloElement = document.getElementById('titulo');
+            const nomeElement = document.getElementById('nome');
+            const descricaoElement = document.getElementById('descricao');
+            const iconeElement = document.querySelector('.imagem img');
+
+            if (value === 'add-funcionario') {
+                tituloElement.textContent = 'Adicionar Novo Usuário';
+                nomeElement.placeholder = 'Nome do Usuário';
+                descricaoElement.placeholder = 'Cargo do Funcionário';
+                iconeElement.src = '../Assets/images/Icones/usuario.webp';
+            } else {
+                tituloElement.textContent = 'Adicionar Nova EPI';
+                nomeElement.placeholder = 'Nome do Equipamento';
+                descricaoElement.placeholder = 'Descrição do Equipamento';
+                iconeElement.src = '../Assets/images/Icones/nova.webp';
+            }
         }
-  
-        selectElement.addEventListener('change', function() {
-          const selectedOption = selectElement.value;
-          localStorage.setItem('selectedValue', selectedOption);
-          redirectToPage(selectedOption);
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('arquivo');
+            const label = document.querySelector('label[for="arquivo"]');
+
+            fileInput.addEventListener('change', function() {
+                if (fileInput.files.length > 0) {
+                    label.textContent = fileInput.files[0].name;
+                } else {
+                    label.textContent = 'Clique para anexar uma imagem';
+                }
+            });
         });
-  
-        function redirectToPage(value) {
-          if (value === "add-funcionario") {
-            window.open('https://epi-assure.netlify.app/administrador/add-funcionario', '_self');
-          }
-        }
-      </script>
+    </script>
 </head>
 <body>
     <header>
@@ -47,22 +59,22 @@
     </header>
     <main>
         <div id="filtro">
-            <select onchange="redirectToPage(this.value)">
-              <option value="add-equipamento" selected>Equipamento</option>
-              <option value="add-funcionario">Funcionário</option>
+            <select id="selectFiltro" onchange="changeFields(this.value)">
+                <option value="add-equipamento" selected>Equipamento</option>
+                <option value="add-funcionario">Funcionário</option>
             </select>
         </div>
-        <h3>Adicionar Nova EPI</h3>
+        <h3 id="titulo">Adicionar Nova EPI</h3>
         <div class="imagem">
             <img src="../Assets/images/Icones/nova.webp" alt="capacete" id="icone-equip">
         </div>
         <form action="">
             <label for="arquivo">Clique para anexar uma imagem</label>
             <input type="file" id="arquivo" name="arquivo" placeholder="Clique aqui para enviar uma foto">
-            <input type="text" placeholder="Nome do Equipamento">
-            <input type="text" placeholder="Descrição do Equipamento">
+            <input type="text" id="nome" name="nome" placeholder="Nome do Equipamento">
+            <input type="text" id="descricao" name="descricao" placeholder="Descrição do Equipamento">
+            <button type="submit" id="botao-confirma">Confirmar</button> 
         </form>
-
     </main>
     <footer>
         <ul>
