@@ -1,3 +1,4 @@
+using backend.models.requestModels;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -16,6 +17,6 @@ namespace backend.models
         [BsonElement("linkImagemComprobatoria")]
         public string LinkImagemComprobatoria { get; set; }
         [BsonElement("equipamentos")]
-        public List<Equipamento> Equipamentos { get; set; }
+        public List<CheckinEquipamentoRequest> Equipamentos { get; set; }
     }
 }
