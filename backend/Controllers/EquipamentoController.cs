@@ -32,5 +32,59 @@ namespace backend.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+        [HttpPost]
+        [Route("CreateNewEquipamento")]
+        public IActionResult CreateNewEquipamento(Equipamento newEquipamento)
+        {
+            try
+            {
+                _equipamentosCollection.InsertOne(newEquipamento);
+                return Ok(newEquipamento);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpPut]
+        [Route("UpdateEquipamento/{id}")]
+        public IActionResult UpdateEquipamento(string id, Equipamento updatedEquipamento)
+        {
+            try
+            {
+                var filter = Builders<Equipamento>.Filter.Eq("_id", id);
+                var result = _equipamentosCollection.ReplaceOne(filter, updatedEquipamento);
+
+                if (result.ModifiedCount == 1)
+                    return Ok(updatedEquipamento);
+                else
+                    return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteEquipamento/{id}")]
+        public IActionResult DeleteEquipamento(string id)
+        {
+            try
+            {
+                var filter = Builders<Equipamento>.Filter.Eq("_id", id);
+                var result = _equipamentosCollection.DeleteOne(filter);
+
+                if (result.DeletedCount == 1)
+                    return Ok();
+                else
+                    return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }
