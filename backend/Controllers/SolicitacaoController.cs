@@ -45,5 +45,44 @@ namespace backend.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+        [HttpPut]
+        [Route("UpdateSolicitacao/{id}")]
+        public IActionResult UpdateSolicitacao(string id, Solicitacao updatedSolicitacao)
+        {
+            try
+            {
+                var filter = Builders<Solicitacao>.Filter.Eq("_id", id);
+                var result = _solicitacaoCollection.ReplaceOne(filter, updatedSolicitacao);
+
+                if (result.ModifiedCount == 1)
+                    return Ok(updatedSolicitacao);
+                else
+                    return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteSolicitacao/{id}")]
+        public IActionResult DeleteSolicitacao(string id)
+        {
+            try
+            {
+                var filter = Builders<Solicitacao>.Filter.Eq("_id", id);
+                var result = _solicitacaoCollection.DeleteOne(filter);
+
+                if (result.DeletedCount == 1)
+                    return Ok();
+                else
+                    return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }
